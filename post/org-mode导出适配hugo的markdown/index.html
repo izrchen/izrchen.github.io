@@ -11,7 +11,7 @@
 添加本地Hugo项目 echo &#34;# izrchen.github.io&#34; &gt;&gt; README.md git init git add README.md git commit -m &#34;first commit&#34; git branch -M main git remote add origin https://github.">
 <meta name="author" content="Nathan">
 <link rel="canonical" href="http://izrchen.github.io/post/org-mode%E5%AF%BC%E5%87%BA%E9%80%82%E9%85%8Dhugo%E7%9A%84markdown/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.7bdb1411b29ec9fed2b6395a081eabcb3262e7311bda855249d433c8b30a926e.css" integrity="sha256-e9sUEbKeyf7StjlaCB6ryzJi5zEb2oVSSdQzyLMKkm4=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="http://izrchen.github.io/favicon.ico">
@@ -167,8 +167,23 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://izrchen.github.io/math" title="数学">
-                    <span>数学</span>
+                <a href="http://izrchen.github.io/categories" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://izrchen.github.io/search" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://izrchen.github.io/archives" title="时间轴">
+                    <span>时间轴</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://izrchen.github.io/tags" title="标签">
+                    <span>标签</span>
                 </a>
             </li>
         </ul>
@@ -270,7 +285,117 @@ git push -u origin main
 </ul>
 
 
-  </div>
+  </div><aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">Table of Contents</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#hugo" aria-label="Hugo">Hugo</a><ul>
+                            
+                    <li>
+                        <a href="#%e5%8f%82%e8%80%83" aria-label="参考">参考</a></li>
+                    <li>
+                        <a href="#%e6%9c%ac%e5%9c%b0hugo" aria-label="本地Hugo">本地Hugo</a></li>
+                    <li>
+                        <a href="#github-pages" aria-label="Github Pages">Github Pages</a><ul>
+                            
+                    <li>
+                        <a href="#github%e6%96%b0%e5%bb%barepo" aria-label="github新建repo">github新建repo</a></li>
+                    <li>
+                        <a href="#%e6%b7%bb%e5%8a%a0%e6%9c%ac%e5%9c%b0hugo%e9%a1%b9%e7%9b%ae" aria-label="添加本地Hugo项目">添加本地Hugo项目</a></li>
+                    <li>
+                        <a href="#%e4%bf%ae%e6%94%b9github-pages%e7%9a%84branch" aria-label="修改Github Pages的branch">修改Github Pages的branch</a></li></ul>
+                    </li></ul>
+                    </li>
+                    <li>
+                        <a href="#ox-hugo" aria-label="ox-hugo">ox-hugo</a><ul>
+                            
+                    <li>
+                        <a href="#%e5%ae%89%e8%a3%85" aria-label="安装">安装</a></li>
+                    <li>
+                        <a href="#%e9%85%8d%e7%bd%ae" aria-label="配置">配置</a></li>
+                    <li>
+                        <a href="#%e4%bd%bf%e7%94%a8" aria-label="使用">使用</a></li>
+                    <li>
+                        <a href="#markdown%e6%89%80%e9%9c%80%e5%a4%b4%e9%83%a8%e5%8f%8aorg-mode%e8%ae%be%e7%bd%ae%e6%96%b9%e5%bc%8f" aria-label="markdown所需头部及org-mode设置方式">markdown所需头部及org-mode设置方式</a><ul>
+                            
+                    <li>
+                        <a href="#%e9%85%8d%e7%bd%ae%e5%8f%8a%e8%a7%a3%e9%87%8a" aria-label="配置及解释">配置及解释</a></li>
+                    <li>
+                        <a href="#%e5%8f%82%e8%80%83" aria-label="参考">参考</a>
+                    </li>
+                </ul>
+                </li>
+                </ul>
+                </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
 
   <footer class="post-footer">
   </footer>

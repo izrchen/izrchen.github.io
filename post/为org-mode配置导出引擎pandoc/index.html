@@ -10,7 +10,7 @@
 <meta name="description" content="动机  org-mode 自带ox-md.el导出工具，不能正确导出公式  WSL安装pandoc Emacs安装ox-pandoc Emacs Emacs配置 将pandoc加入org-mode export dispather 添加hook (with-eval-after-load &#39;ox (require &#39;ox-pandoc)) 去除原生的markdown导出 &#39;(require &#39;ox-md nil t) 将markdown加入pandoc  导出markdown格式文件的命令： C-x org-pandoc-export-to-markdown 编辑变量，添加导出快捷键： C-h v org-pandoc-menu-entry  ">
 <meta name="author" content="Nathan">
 <link rel="canonical" href="http://izrchen.github.io/post/%E4%B8%BAorg-mode%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%87%BA%E5%BC%95%E6%93%8Epandoc/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.7bdb1411b29ec9fed2b6395a081eabcb3262e7311bda855249d433c8b30a926e.css" integrity="sha256-e9sUEbKeyf7StjlaCB6ryzJi5zEb2oVSSdQzyLMKkm4=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="http://izrchen.github.io/favicon.ico">
@@ -164,8 +164,23 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://izrchen.github.io/math" title="数学">
-                    <span>数学</span>
+                <a href="http://izrchen.github.io/categories" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://izrchen.github.io/search" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://izrchen.github.io/archives" title="时间轴">
+                    <span>时间轴</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://izrchen.github.io/tags" title="标签">
+                    <span>标签</span>
                 </a>
             </li>
         </ul>
@@ -226,7 +241,100 @@
 </ul>
 
 
-  </div>
+  </div><aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">Table of Contents</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#%e5%8a%a8%e6%9c%ba" aria-label="动机">动机</a></li>
+                    <li>
+                        <a href="#wsl%e5%ae%89%e8%a3%85pandoc" aria-label="WSL安装pandoc">WSL安装pandoc</a></li>
+                    <li>
+                        <a href="#emacs%e5%ae%89%e8%a3%85ox-pandoc" aria-label="Emacs安装ox-pandoc Emacs">Emacs安装ox-pandoc <!-- raw HTML omitted --><!-- raw HTML omitted -->Emacs<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+                    <li>
+                        <a href="#emacs%e9%85%8d%e7%bd%ae" aria-label="Emacs配置">Emacs配置</a><ul>
+                            
+                    <li>
+                        <a href="#%e5%b0%86pandoc%e5%8a%a0%e5%85%a5org-mode-export-dispather" aria-label="将pandoc加入org-mode export dispather">将pandoc加入org-mode export dispather</a><ul>
+                            
+                    <li>
+                        <a href="#%e6%b7%bb%e5%8a%a0hook" aria-label="添加hook">添加hook</a></li>
+                    <li>
+                        <a href="#%e5%8e%bb%e9%99%a4%e5%8e%9f%e7%94%9f%e7%9a%84markdown%e5%af%bc%e5%87%ba" aria-label="去除原生的markdown导出">去除原生的markdown导出</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e5%b0%86markdown%e5%8a%a0%e5%85%a5pandoc" aria-label="将markdown加入pandoc">将markdown加入pandoc</a>
+                    </li>
+                </ul>
+                </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
 
   <footer class="post-footer">
   </footer>

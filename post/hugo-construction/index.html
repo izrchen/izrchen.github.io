@@ -5,20 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Nathan’s Blog</title>
-<meta name="keywords" content="" />
-<meta name="description" content=":EXPORT_FILE_NAME: ox-hugo-tutorial :EXPORT_DESCRIPTION: Exporting to Hugo&rsquo;s Blackfriday Markdown from Orgmode :EXPORT_HUGO_IMAGES: /img/org.pn :mathjax: true
-&#43; mathjax: true &#43;
-图的拉普拉斯矩阵 拉普拉斯算子 定义1： 多元函数 \(f(x_{1},x_{2},&hellip;,x_{n})\) 的拉普拉斯算子是所有自变量的非混合二阶偏导数之和 \(\Delta f= \sum_{i=1}^{n} \frac{\partial^{2}f}{\partial x_{i}^{2}}\)
-特别的，二元函数 \(f(x,y)\) 的拉普拉斯算子为\ref{eq:2lp}
-\begin{equation} \Delta f=\frac{\partial^{2}f}{\partial x^{2}}&#43;\frac{\partial^{2}f}{\partial y^{2}} \label{eq:2lp} \end{equation}
-导数定义：
-\begin{equation} f&rsquo;(x)=\frac{f(x&#43;\Delta x)-f(x)}{\Delta x} \label{eq:1p} \end{equation}
-二阶导数定义：
-\begin{equation} \begin{split} f&rsquo;&rsquo;(x) &amp;=\frac{f&rsquo;(x)-f&rsquo;(x-\Delta x)}{\Delta x} \\\\ &amp;=\frac{\frac{f(x&#43;\Delta x)}{\Delta x}-\frac{f(x-\Delta x)}{\Delta x}}{\Delta x} \\\\ &amp;=\frac{f(x&#43; \Delta x)&#43;f(x-\Delta x)-2f(x)}{(\Delta x)^{2}} \label{eq:2p} \end{split} \end{equation}
-二元函数 \(f(x,y)\) 的拉普拉斯算子\ref{eq:2lp}的近似形式：">
-<meta name="author" content="CZR">
-<link rel="canonical" href="http://izrchen.github.io/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6/" />
+<title>Hugo搭建 | Nathan’s Blog</title>
+<meta name="keywords" content="流程" />
+<meta name="description" content="Hugo的搭建流程">
+<meta name="author" content="Nathan">
+<link rel="canonical" href="http://izrchen.github.io/post/hugo-construction/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.7bdb1411b29ec9fed2b6395a081eabcb3262e7311bda855249d433c8b30a926e.css" integrity="sha256-e9sUEbKeyf7StjlaCB6ryzJi5zEb2oVSSdQzyLMKkm4=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
     onload="hljs.initHighlightingOnLoad();"></script>
@@ -65,34 +56,16 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="" />
-<meta property="og:description" content=":EXPORT_FILE_NAME: ox-hugo-tutorial :EXPORT_DESCRIPTION: Exporting to Hugo&rsquo;s Blackfriday Markdown from Orgmode :EXPORT_HUGO_IMAGES: /img/org.pn :mathjax: true
-&#43; mathjax: true &#43;
-图的拉普拉斯矩阵 拉普拉斯算子 定义1： 多元函数 \(f(x_{1},x_{2},&hellip;,x_{n})\) 的拉普拉斯算子是所有自变量的非混合二阶偏导数之和 \(\Delta f= \sum_{i=1}^{n} \frac{\partial^{2}f}{\partial x_{i}^{2}}\)
-特别的，二元函数 \(f(x,y)\) 的拉普拉斯算子为\ref{eq:2lp}
-\begin{equation} \Delta f=\frac{\partial^{2}f}{\partial x^{2}}&#43;\frac{\partial^{2}f}{\partial y^{2}} \label{eq:2lp} \end{equation}
-导数定义：
-\begin{equation} f&rsquo;(x)=\frac{f(x&#43;\Delta x)-f(x)}{\Delta x} \label{eq:1p} \end{equation}
-二阶导数定义：
-\begin{equation} \begin{split} f&rsquo;&rsquo;(x) &amp;=\frac{f&rsquo;(x)-f&rsquo;(x-\Delta x)}{\Delta x} \\\\ &amp;=\frac{\frac{f(x&#43;\Delta x)}{\Delta x}-\frac{f(x-\Delta x)}{\Delta x}}{\Delta x} \\\\ &amp;=\frac{f(x&#43; \Delta x)&#43;f(x-\Delta x)-2f(x)}{(\Delta x)^{2}} \label{eq:2p} \end{split} \end{equation}
-二元函数 \(f(x,y)\) 的拉普拉斯算子\ref{eq:2lp}的近似形式：" />
+</noscript><meta property="og:title" content="Hugo搭建" />
+<meta property="og:description" content="Hugo的搭建流程" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://izrchen.github.io/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6/" /><meta property="article:section" content="post" />
-
-
+<meta property="og:url" content="http://izrchen.github.io/post/hugo-construction/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-10T00:00:00&#43;08:00" />
+<meta property="article:modified_time" content="2022-05-10T00:00:00&#43;08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content=":EXPORT_FILE_NAME: ox-hugo-tutorial :EXPORT_DESCRIPTION: Exporting to Hugo&rsquo;s Blackfriday Markdown from Orgmode :EXPORT_HUGO_IMAGES: /img/org.pn :mathjax: true
-&#43; mathjax: true &#43;
-图的拉普拉斯矩阵 拉普拉斯算子 定义1： 多元函数 \(f(x_{1},x_{2},&hellip;,x_{n})\) 的拉普拉斯算子是所有自变量的非混合二阶偏导数之和 \(\Delta f= \sum_{i=1}^{n} \frac{\partial^{2}f}{\partial x_{i}^{2}}\)
-特别的，二元函数 \(f(x,y)\) 的拉普拉斯算子为\ref{eq:2lp}
-\begin{equation} \Delta f=\frac{\partial^{2}f}{\partial x^{2}}&#43;\frac{\partial^{2}f}{\partial y^{2}} \label{eq:2lp} \end{equation}
-导数定义：
-\begin{equation} f&rsquo;(x)=\frac{f(x&#43;\Delta x)-f(x)}{\Delta x} \label{eq:1p} \end{equation}
-二阶导数定义：
-\begin{equation} \begin{split} f&rsquo;&rsquo;(x) &amp;=\frac{f&rsquo;(x)-f&rsquo;(x-\Delta x)}{\Delta x} \\\\ &amp;=\frac{\frac{f(x&#43;\Delta x)}{\Delta x}-\frac{f(x-\Delta x)}{\Delta x}}{\Delta x} \\\\ &amp;=\frac{f(x&#43; \Delta x)&#43;f(x-\Delta x)-2f(x)}{(\Delta x)^{2}} \label{eq:2p} \end{split} \end{equation}
-二元函数 \(f(x,y)\) 的拉普拉斯算子\ref{eq:2lp}的近似形式："/>
+<meta name="twitter:title" content="Hugo搭建"/>
+<meta name="twitter:description" content="Hugo的搭建流程"/>
 
 
 <script type="application/ld+json">
@@ -109,8 +82,8 @@
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "",
-      "item": "http://izrchen.github.io/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6/"
+      "name": "Hugo搭建",
+      "item": "http://izrchen.github.io/post/hugo-construction/"
     }
   ]
 }
@@ -119,24 +92,24 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "",
-  "name": "",
-  "description": ":EXPORT_FILE_NAME: ox-hugo-tutorial :EXPORT_DESCRIPTION: Exporting to Hugo\u0026rsquo;s Blackfriday Markdown from Orgmode :EXPORT_HUGO_IMAGES: /img/org.pn :mathjax: true\n+ mathjax: true +\n图的拉普拉斯矩阵 拉普拉斯算子 定义1： 多元函数 \\(f(x_{1},x_{2},\u0026hellip;,x_{n})\\) 的拉普拉斯算子是所有自变量的非混合二阶偏导数之和 \\(\\Delta f= \\sum_{i=1}^{n} \\frac{\\partial^{2}f}{\\partial x_{i}^{2}}\\)\n特别的，二元函数 \\(f(x,y)\\) 的拉普拉斯算子为\\ref{eq:2lp}\n\\begin{equation} \\Delta f=\\frac{\\partial^{2}f}{\\partial x^{2}}+\\frac{\\partial^{2}f}{\\partial y^{2}} \\label{eq:2lp} \\end{equation}\n导数定义：\n\\begin{equation} f\u0026rsquo;(x)=\\frac{f(x+\\Delta x)-f(x)}{\\Delta x} \\label{eq:1p} \\end{equation}\n二阶导数定义：\n\\begin{equation} \\begin{split} f\u0026rsquo;\u0026rsquo;(x) \u0026amp;=\\frac{f\u0026rsquo;(x)-f\u0026rsquo;(x-\\Delta x)}{\\Delta x} \\\\\\\\ \u0026amp;=\\frac{\\frac{f(x+\\Delta x)}{\\Delta x}-\\frac{f(x-\\Delta x)}{\\Delta x}}{\\Delta x} \\\\\\\\ \u0026amp;=\\frac{f(x+ \\Delta x)+f(x-\\Delta x)-2f(x)}{(\\Delta x)^{2}} \\label{eq:2p} \\end{split} \\end{equation}\n二元函数 \\(f(x,y)\\) 的拉普拉斯算子\\ref{eq:2lp}的近似形式：",
+  "headline": "Hugo搭建",
+  "name": "Hugo搭建",
+  "description": "Hugo的搭建流程",
   "keywords": [
-    
+    "流程"
   ],
-  "articleBody": ":EXPORT_FILE_NAME: ox-hugo-tutorial :EXPORT_DESCRIPTION: Exporting to Hugo’s Blackfriday Markdown from Orgmode :EXPORT_HUGO_IMAGES: /img/org.pn :mathjax: true\n+ mathjax: true +\n图的拉普拉斯矩阵 拉普拉斯算子 定义1： 多元函数 \\(f(x_{1},x_{2},…,x_{n})\\) 的拉普拉斯算子是所有自变量的非混合二阶偏导数之和 \\(\\Delta f= \\sum_{i=1}^{n} \\frac{\\partial^{2}f}{\\partial x_{i}^{2}}\\)\n特别的，二元函数 \\(f(x,y)\\) 的拉普拉斯算子为\\ref{eq:2lp}\n\\begin{equation} \\Delta f=\\frac{\\partial^{2}f}{\\partial x^{2}}+\\frac{\\partial^{2}f}{\\partial y^{2}} \\label{eq:2lp} \\end{equation}\n导数定义：\n\\begin{equation} f’(x)=\\frac{f(x+\\Delta x)-f(x)}{\\Delta x} \\label{eq:1p} \\end{equation}\n二阶导数定义：\n\\begin{equation} \\begin{split} f’’(x) \u0026=\\frac{f’(x)-f’(x-\\Delta x)}{\\Delta x} \\\\\\\\ \u0026=\\frac{\\frac{f(x+\\Delta x)}{\\Delta x}-\\frac{f(x-\\Delta x)}{\\Delta x}}{\\Delta x} \\\\\\\\ \u0026=\\frac{f(x+ \\Delta x)+f(x-\\Delta x)-2f(x)}{(\\Delta x)^{2}} \\label{eq:2p} \\end{split} \\end{equation}\n二元函数 \\(f(x,y)\\) 的拉普拉斯算子\\ref{eq:2lp}的近似形式：\n图的邻接矩阵与加权度矩阵 拉普拉斯矩阵 归一化拉普拉斯矩阵 ",
-  "wordCount" : "75",
+  "articleBody": "配置  实现自定义主题：复制主题的 layout 和 asserts 到博客根目录 添加目录 添加标签和分类 修改配置文件格式：toml → yaml  添加搜索，标签和分类功能  给hugo添加搜索功能  添加目录 配置文件config toml和yaml的格式区别  param:config 和 param=config  config文件内容  baseURL language theme title menu params  ShowWordCount: true ShowReadingTime: true   outputs  home    博文编辑的文件头 #+HUGO_BASE_DIR: /mnt/c/myText/hugo/ #+HUGO_SECTION: post #+TITLE: Hugo搭建 #+DESCRIPTION: 搭建流程 #+HUGO_CATEGORIES: Tech #+HUGO_TAGS: 博客 #+HUGO_SLUG: hugo-construction #+HUGO_DRAFT: true #+AUTHOR: #+DATE: 博文图片嵌入 方案一：截图图传  图传网站：https://sm.ms/ 提取图片链接，可使用JS代码提取 插入HTML标识，key： htmlpic  #+CAPTION: #+ATTR_HTML: :width $2% :align center picture url 方案二：SVG  svg在线编辑：https://svg.wxeditor.com/ 将svg图片保存到本地 复制svg代码到org或者md文件中，根据需要进行修改 为保证md文件中的svg原样输出到html，需在目标代码的前后插入 {{rawhtml}} 和 {{/rawhtml}}  \"两个花括号\"  \"两个花括号\" 目标代码 \"两个花括号\"  \"两个花括号\" 参考  Blog养成记(4) Hugo中增加tags等分类 | ZHENG Zi’ou Sulv’s Blog 喔唷，崩溃啦！ Hugo添加文章目录toc Hugo博客目录放在侧边 | PaperMod主题 | Sulv’s Blog org-mode导出适配hugo的markdown | Nathan’s Blog hugo博客搭建 | PaperMod主题 - 云+社区 - 腾讯云 使用Hugo Shortcode和svg标签构建自定义图形！  ",
+  "wordCount" : "109",
   "inLanguage": "en",
-  "datePublished": "0001-01-01T00:00:00Z",
-  "dateModified": "0001-01-01T00:00:00Z",
+  "datePublished": "2022-05-10T00:00:00+08:00",
+  "dateModified": "2022-05-10T00:00:00+08:00",
   "author":[{
     "@type": "Person",
-    "name": "CZR"
+    "name": "Nathan"
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://izrchen.github.io/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6/"
+    "@id": "http://izrchen.github.io/post/hugo-construction/"
   },
   "publisher": {
     "@type": "Organization",
@@ -242,46 +215,95 @@
   <header class="post-header">
     
     <h1 class="post-title">
-      
+      Hugo搭建
     </h1>
-    <div class="post-meta">1 min&nbsp;·&nbsp;75 words&nbsp;·&nbsp;CZR
+    <div class="post-description">
+      Hugo的搭建流程
+    </div>
+    <div class="post-meta"><span title='2022-05-10 00:00:00 +0800 CST'>May 10, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;109 words&nbsp;·&nbsp;Nathan
 
 </div>
   </header> 
-  <div class="post-content"><p>:EXPORT_FILE_NAME: ox-hugo-tutorial
-:EXPORT_DESCRIPTION: Exporting to Hugo&rsquo;s Blackfriday Markdown from Orgmode
-:EXPORT_HUGO_IMAGES: /img/org.pn
-:mathjax: true</p>
-<p><del>+</del>
-mathjax: true
-<del>+</del></p>
-<h2 id="图的拉普拉斯矩阵">图的拉普拉斯矩阵<a hidden class="anchor" aria-hidden="true" href="#图的拉普拉斯矩阵">#</a></h2>
-<h3 id="拉普拉斯算子">拉普拉斯算子<a hidden class="anchor" aria-hidden="true" href="#拉普拉斯算子">#</a></h3>
-<p><strong>定义1：</strong> 多元函数 \(f(x_{1},x_{2},&hellip;,x_{n})\) 的拉普拉斯算子是所有自变量的非混合二阶偏导数之和 \(\Delta f= \sum_{i=1}^{n} \frac{\partial^{2}f}{\partial x_{i}^{2}}\)</p>
-<p>特别的，二元函数 \(f(x,y)\) 的拉普拉斯算子为\ref{eq:2lp}</p>
-<p>\begin{equation}
-\Delta f=\frac{\partial^{2}f}{\partial x^{2}}+\frac{\partial^{2}f}{\partial y^{2}}
-\label{eq:2lp}
-\end{equation}</p>
-<p><strong>导数定义：</strong></p>
-<p>\begin{equation}
-f&rsquo;(x)=\frac{f(x+\Delta x)-f(x)}{\Delta x}
-\label{eq:1p}
-\end{equation}</p>
-<p><strong>二阶导数定义：</strong></p>
-<p>\begin{equation}
-\begin{split}
-f&rsquo;&rsquo;(x)
-&amp;=\frac{f&rsquo;(x)-f&rsquo;(x-\Delta x)}{\Delta x} \\\\
-&amp;=\frac{\frac{f(x+\Delta x)}{\Delta x}-\frac{f(x-\Delta x)}{\Delta x}}{\Delta x} \\\\
-&amp;=\frac{f(x+ \Delta x)+f(x-\Delta x)-2f(x)}{(\Delta x)^{2}}
-\label{eq:2p}
-\end{split}
-\end{equation}</p>
-<p>二元函数 \(f(x,y)\) 的拉普拉斯算子\ref{eq:2lp}的近似形式：</p>
-<h3 id="图的邻接矩阵与加权度矩阵">图的邻接矩阵与加权度矩阵<a hidden class="anchor" aria-hidden="true" href="#图的邻接矩阵与加权度矩阵">#</a></h3>
-<h3 id="拉普拉斯矩阵">拉普拉斯矩阵<a hidden class="anchor" aria-hidden="true" href="#拉普拉斯矩阵">#</a></h3>
-<h3 id="归一化拉普拉斯矩阵">归一化拉普拉斯矩阵<a hidden class="anchor" aria-hidden="true" href="#归一化拉普拉斯矩阵">#</a></h3>
+  <div class="post-content"><h2 id="配置">配置<a hidden class="anchor" aria-hidden="true" href="#配置">#</a></h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 实现自定义主题：复制主题的 <code>layout</code> 和 <code>asserts</code> 到博客根目录</li>
+<li><input checked="" disabled="" type="checkbox"> 添加目录</li>
+<li><input checked="" disabled="" type="checkbox"> 添加标签和分类</li>
+<li><input checked="" disabled="" type="checkbox"> 修改配置文件格式：toml → yaml</li>
+</ul>
+<h3 id="添加搜索-标签和分类功能">添加搜索，标签和分类功能<a hidden class="anchor" aria-hidden="true" href="#添加搜索-标签和分类功能">#</a></h3>
+<ul>
+<li><a href="https://sobaigu.com/hugo-set-featuer-search.html">给hugo添加搜索功能</a></li>
+</ul>
+<h3 id="添加目录">添加目录<a hidden class="anchor" aria-hidden="true" href="#添加目录">#</a></h3>
+<h3 id="配置文件config">配置文件config<a hidden class="anchor" aria-hidden="true" href="#配置文件config">#</a></h3>
+<h4 id="toml和yaml的格式区别">toml和yaml的格式区别<a hidden class="anchor" aria-hidden="true" href="#toml和yaml的格式区别">#</a></h4>
+<ul>
+<li><code>param:config</code> 和 <code>param=config</code></li>
+</ul>
+<h4 id="config文件内容">config文件内容<a hidden class="anchor" aria-hidden="true" href="#config文件内容">#</a></h4>
+<ul>
+<li>baseURL</li>
+<li>language</li>
+<li>theme</li>
+<li>title</li>
+<li>menu</li>
+<li>params
+<ul>
+<li>ShowWordCount: true</li>
+<li>ShowReadingTime: true</li>
+</ul>
+</li>
+<li>outputs
+<ul>
+<li>home</li>
+</ul>
+</li>
+</ul>
+<h2 id="博文编辑的文件头">博文编辑的文件头<a hidden class="anchor" aria-hidden="true" href="#博文编辑的文件头">#</a></h2>
+<pre tabindex="0"><code class="language-nil" data-lang="nil">#+HUGO_BASE_DIR: /mnt/c/myText/hugo/
+#+HUGO_SECTION: post
+#+TITLE: Hugo搭建
+#+DESCRIPTION: 搭建流程
+#+HUGO_CATEGORIES: Tech
+#+HUGO_TAGS: 博客
+#+HUGO_SLUG: hugo-construction
+#+HUGO_DRAFT: true
+#+AUTHOR:
+#+DATE:
+</code></pre><h2 id="博文图片嵌入">博文图片嵌入<a hidden class="anchor" aria-hidden="true" href="#博文图片嵌入">#</a></h2>
+<h3 id="方案一-截图图传">方案一：截图图传<a hidden class="anchor" aria-hidden="true" href="#方案一-截图图传">#</a></h3>
+<ul>
+<li>图传网站：<a href="https://sm.ms/">https://sm.ms/</a></li>
+<li>提取图片链接，可使用JS代码提取</li>
+<li>插入HTML标识，key： <code>htmlpic</code></li>
+</ul>
+<!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-nil" data-lang="nil">#+CAPTION:
+#+ATTR_HTML: :width $2% :align center
+picture url
+</code></pre><h3 id="方案二-svg">方案二：SVG<a hidden class="anchor" aria-hidden="true" href="#方案二-svg">#</a></h3>
+<ul>
+<li>svg在线编辑：<a href="https://svg.wxeditor.com/">https://svg.wxeditor.com/</a></li>
+<li>将svg图片保存到本地</li>
+<li>复制svg代码到org或者md文件中，根据需要进行修改</li>
+<li>为保证md文件中的svg原样输出到html，需在目标代码的前后插入 <code>{{rawhtml}}</code> 和 <code>{{/rawhtml}}</code></li>
+</ul>
+<!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-nil" data-lang="nil">&#34;两个花括号&#34; &lt;rawhtml&gt; &#34;两个花括号&#34;
+目标代码
+&#34;两个花括号&#34; &lt;/rawhtml&gt; &#34;两个花括号&#34;
+</code></pre><h2 id="参考">参考<a hidden class="anchor" aria-hidden="true" href="#参考">#</a></h2>
+<ul>
+<li><a href="https://orianna-zzo.github.io/sci-tech/2018-01/blog%E5%85%BB%E6%88%90%E8%AE%B04-hugo%E4%B8%AD%E5%A2%9E%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/">Blog养成记(4) Hugo中增加tags等分类 | ZHENG Zi&rsquo;ou</a></li>
+<li><a href="https://www.sulvblog.cn/">Sulv&rsquo;s Blog</a></li>
+<li><a href="https://lewky.cn/posts/hugo-2.html/">喔唷，崩溃啦！</a></li>
+<li><a href="https://www.ariesme.com/posts/2019/add_toc_for_hugo/#h3_2_2">Hugo添加文章目录toc</a></li>
+<li><a href="https://www.sulvblog.cn/posts/blog/hugo_toc_side/">Hugo博客目录放在侧边 | PaperMod主题 | Sulv&rsquo;s Blog</a></li>
+<li><a href="http://localhost:1313/post/org-mode%E5%AF%BC%E5%87%BA%E9%80%82%E9%85%8Dhugo%E7%9A%84markdown/">org-mode导出适配hugo的markdown | Nathan’s Blog</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1944138">hugo博客搭建 | PaperMod主题 - 云+社区 - 腾讯云</a></li>
+<li><a href="https://beyondstars.xyz/posts/hugo-shortcode-svg/">使用Hugo Shortcode和svg标签构建自定义图形！</a></li>
+</ul>
 
 
   </div><aside id="toc-container" class="toc-container wide">
@@ -293,19 +315,34 @@ f&rsquo;&rsquo;(x)
 
             <div class="inner"><ul>
                     <li>
-                        <a href="#%e5%9b%be%e7%9a%84%e6%8b%89%e6%99%ae%e6%8b%89%e6%96%af%e7%9f%a9%e9%98%b5" aria-label="图的拉普拉斯矩阵">图的拉普拉斯矩阵</a><ul>
+                        <a href="#%e9%85%8d%e7%bd%ae" aria-label="配置">配置</a><ul>
                             
                     <li>
-                        <a href="#%e6%8b%89%e6%99%ae%e6%8b%89%e6%96%af%e7%ae%97%e5%ad%90" aria-label="拉普拉斯算子">拉普拉斯算子</a></li>
+                        <a href="#%e6%b7%bb%e5%8a%a0%e6%90%9c%e7%b4%a2-%e6%a0%87%e7%ad%be%e5%92%8c%e5%88%86%e7%b1%bb%e5%8a%9f%e8%83%bd" aria-label="添加搜索，标签和分类功能">添加搜索，标签和分类功能</a></li>
                     <li>
-                        <a href="#%e5%9b%be%e7%9a%84%e9%82%bb%e6%8e%a5%e7%9f%a9%e9%98%b5%e4%b8%8e%e5%8a%a0%e6%9d%83%e5%ba%a6%e7%9f%a9%e9%98%b5" aria-label="图的邻接矩阵与加权度矩阵">图的邻接矩阵与加权度矩阵</a></li>
+                        <a href="#%e6%b7%bb%e5%8a%a0%e7%9b%ae%e5%bd%95" aria-label="添加目录">添加目录</a></li>
                     <li>
-                        <a href="#%e6%8b%89%e6%99%ae%e6%8b%89%e6%96%af%e7%9f%a9%e9%98%b5" aria-label="拉普拉斯矩阵">拉普拉斯矩阵</a></li>
+                        <a href="#%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6config" aria-label="配置文件config">配置文件config</a><ul>
+                            
                     <li>
-                        <a href="#%e5%bd%92%e4%b8%80%e5%8c%96%e6%8b%89%e6%99%ae%e6%8b%89%e6%96%af%e7%9f%a9%e9%98%b5" aria-label="归一化拉普拉斯矩阵">归一化拉普拉斯矩阵</a>
+                        <a href="#toml%e5%92%8cyaml%e7%9a%84%e6%a0%bc%e5%bc%8f%e5%8c%ba%e5%88%ab" aria-label="toml和yaml的格式区别">toml和yaml的格式区别</a></li>
+                    <li>
+                        <a href="#config%e6%96%87%e4%bb%b6%e5%86%85%e5%ae%b9" aria-label="config文件内容">config文件内容</a></li></ul>
+                    </li></ul>
                     </li>
-                </ul>
-                </li>
+                    <li>
+                        <a href="#%e5%8d%9a%e6%96%87%e7%bc%96%e8%be%91%e7%9a%84%e6%96%87%e4%bb%b6%e5%a4%b4" aria-label="博文编辑的文件头">博文编辑的文件头</a></li>
+                    <li>
+                        <a href="#%e5%8d%9a%e6%96%87%e5%9b%be%e7%89%87%e5%b5%8c%e5%85%a5" aria-label="博文图片嵌入">博文图片嵌入</a><ul>
+                            
+                    <li>
+                        <a href="#%e6%96%b9%e6%a1%88%e4%b8%80-%e6%88%aa%e5%9b%be%e5%9b%be%e4%bc%a0" aria-label="方案一：截图图传">方案一：截图图传</a></li>
+                    <li>
+                        <a href="#%e6%96%b9%e6%a1%88%e4%ba%8c-svg" aria-label="方案二：SVG">方案二：SVG</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e5%8f%82%e8%80%83" aria-label="参考">参考</a>
+                    </li>
                 </ul>
             </div>
         </details>
@@ -372,6 +409,8 @@ f&rsquo;&rsquo;(x)
 </script>
 
   <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
   </footer>
 </article>
     </main>

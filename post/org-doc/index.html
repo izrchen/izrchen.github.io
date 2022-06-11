@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>org-mode功夫 | Nathan’s Blog</title>
+<meta name="keywords" content="org-mode" />
+<meta name="description" content="利用Emacs和elisp实现标记语言org-mode各种操作">
+<meta name="author" content="Nathan">
+<link rel="canonical" href="http://izrchen.github.io/post/org-doc/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.7bdb1411b29ec9fed2b6395a081eabcb3262e7311bda855249d433c8b30a926e.css" integrity="sha256-e9sUEbKeyf7StjlaCB6ryzJi5zEb2oVSSdQzyLMKkm4=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://izrchen.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://izrchen.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://izrchen.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://izrchen.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="http://izrchen.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="org-mode功夫" />
+<meta property="og:description" content="利用Emacs和elisp实现标记语言org-mode各种操作" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://izrchen.github.io/post/org-doc/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-09T00:00:00&#43;08:00" />
+<meta property="article:modified_time" content="2022-05-09T00:00:00&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="org-mode功夫"/>
+<meta name="twitter:description" content="利用Emacs和elisp实现标记语言org-mode各种操作"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://izrchen.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "org-mode功夫",
+      "item": "http://izrchen.github.io/post/org-doc/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "org-mode功夫",
+  "name": "org-mode功夫",
+  "description": "利用Emacs和elisp实现标记语言org-mode各种操作",
+  "keywords": [
+    "org-mode"
+  ],
+  "articleBody": "内功  目的实现文档快捷编辑  标记符号与功能 快捷键 快速插入固定内容  主要图片 标记符号  元数据 文档元数据 #+TITLE: the title to be shown (default is the buffer name) #+AUTHOR: the author (default taken from user-full-name) #+DATE: a date, an Org timestamp1, or a format string for format-time-string #+EMAIL: his/her email address (default from user-mail-address) #+DESCRIPTION: the page description, e.g. for the XHTML meta tag #+KEYWORDS: the page keywords, e.g. for the XHTML meta tag #+LANGUAGE: language for HTML, e.g. ‘en’ (org-export-default-language) #+TEXT: Some descriptive text to be inserted at the beginning. #+TEXT: Several lines may be given. #+OPTIONS: H:2 num:t toc:t \\n:nil @:t ::t |:t ^:t f:t TeX:t ... #+BIND: lisp-var lisp-val, e.g.: org-export-latex-low-levels itemize You need to confirm using these, or configure org-export-allow-BIND #+LINK_UP: the ``up'' link of an exported page #+LINK_HOME: the ``home'' link of an exported page #+LATEX_HEADER: extra line(s) for the LaTeX header, like \\usepackage{xyz} #+EXPORT_SELECT_TAGS: Tags that select a tree for export #+EXPORT_EXCLUDE_TAGS: Tags that exclude a tree from export #+XSLT: the XSLT stylesheet used by DocBook exporter to generate FO file   HUGO\n #+HUGO_BASE_DIR ：指定了 hugo 博客文件夹的位置 #+HUGO_FRONT_MATTER_FORMAT ：指定了 front matter 的格式 #+HUGO_AUTO_SET_LASTMODE ：ox-hugo 自动更新博客的修改时间 #+HUGO_SECTION ：指定了这篇博客会发布到的目录，比如 post 或者 posts    内容元数据 向外(export) org-mode导出其他文档，配置导出快捷键hook\nEmacs配置 添加导出LaTeX类 update the list of LaTeX classes and associated header\n(require 'ox-latex) (add-to-list 'org-latex-classes  '(\"beamer\" ;类名  \"\\\\documentclass[presentation]{beamer} \\\\usepackage{XeCJK} \\\\setCJKmainfont{SimSun}\" ;导出文件的头部，包含在一个字符串内  (\"\\\\section{%s}\" . \"\\\\section*{%s}\") ; 标题的映射  (\"\\\\subsection{%s}\" . \"\\\\subsection*{%s}\")  (\"\\\\subsubsection{%s}\" . \"\\\\subsubsection*{%s}\"))) 添加hook(C-c C-e) (with-eval-after-load 'ox ;加载ox后  (require 'ox-beamer)) ;引入beamer，其他ox-为前缀 PDF文档 根据Latex文件头，反推org文件中的标记，及Emacs中的配置\n幻灯片 网页幻灯片reveal.js 论文幻灯片Beamer  org → Beamer tex 快捷键 ： C-c C-e l b Beamer相关的org文件头  #+LaTeX_CLASS: beamer #+LaTeX_CLASS_OPTIONS: [bigger] #+BEAMER_HEADER: \\usepackage{XeCJK} #+BEAMER_HEADER: \\setCJKmainfont{SimSun} #+OPTIONS: H:2 #+BEAMER_THEME: CambridgeUS #+TITLE: #+AUTHOR: #+EMAIL: #+DATE:  Emacs配置导出类别 beamer ，对应org文件头中的 #+LaTex_CLASS: beamer  (eval-after-load \"ox-latex\" ;; update the list of LaTeX classes and associated header (encoding, etc.) ;; and structure '(add-to-list 'org-latex-classes `(\"beamer\" ,(concat \"\\\\documentclass[presentation]{beamer}\\n\" \"\\\\usepackage{XeCJK}\" \"\\\\setCJKmainfont{SimSun}\\n\") (\"\\\\section{%s}\" . \"\\\\section*{%s}\") (\"\\\\subsection{%s}\" . \"\\\\subsection*{%s}\") (\"\\\\subsubsection{%s}\" . \"\\\\subsubsection*{%s}\")))) markdown  org → md原样导出：= md语法 = org-mode插入图片  @@md: ![维基娘的姊妹们（由左至右）：维基共享资源娘、维基百科娘、维基语录娘](https://upload.wikimedia.org/wikipedia/commons/1/1f/Wiki-sisters.png) @@ 参考  元数据 Writing Beamer presentations in org-mode  ",
+  "wordCount" : "317",
+  "inLanguage": "en",
+  "datePublished": "2022-05-09T00:00:00+08:00",
+  "dateModified": "2022-05-09T00:00:00+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Nathan"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://izrchen.github.io/post/org-doc/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nathan’s Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://izrchen.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://izrchen.github.io/" accesskey="h" title="Nathan’s Blog (Alt + H)">Nathan’s Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://izrchen.github.io/categories" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://izrchen.github.io/search" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://izrchen.github.io/archives" title="时间轴">
+                    <span>时间轴</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://izrchen.github.io/tags" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  
+    window.addEventListener('load', (event) => {
+        document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+      });
+  
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      org-mode功夫
+    </h1>
+    <div class="post-description">
+      利用Emacs和elisp实现标记语言org-mode各种操作
+    </div>
+    <div class="post-meta"><span title='2022-05-09 00:00:00 +0800 CST'>May 9, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;317 words&nbsp;·&nbsp;Nathan
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="内功">内功<a hidden class="anchor" aria-hidden="true" href="#内功">#</a></h2>
+<ul>
+<li>目的实现文档快捷编辑</li>
+</ul>
+<h3 id="标记符号与功能">标记符号与功能<a hidden class="anchor" aria-hidden="true" href="#标记符号与功能">#</a></h3>
+<h3 id="快捷键">快捷键<a hidden class="anchor" aria-hidden="true" href="#快捷键">#</a></h3>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="快速插入固定内容">快速插入固定内容<a hidden class="anchor" aria-hidden="true" href="#快速插入固定内容">#</a></h3>
+<ul>
+<li>主要图片</li>
+<li>标记符号</li>
+</ul>
+<h3 id="元数据">元数据<a hidden class="anchor" aria-hidden="true" href="#元数据">#</a></h3>
+<h4 id="文档元数据">文档元数据<a hidden class="anchor" aria-hidden="true" href="#文档元数据">#</a></h4>
+<pre tabindex="0"><code class="language-nil" data-lang="nil">#+TITLE:       the title to be shown (default is the buffer name)
+#+AUTHOR:      the author (default taken from user-full-name)
+#+DATE:        a date, an Org timestamp1, or a format string for format-time-string
+#+EMAIL:       his/her email address (default from user-mail-address)
+#+DESCRIPTION: the page description, e.g. for the XHTML meta tag
+#+KEYWORDS:    the page keywords, e.g. for the XHTML meta tag
+#+LANGUAGE:    language for HTML, e.g. ‘en’ (org-export-default-language)
+#+TEXT:        Some descriptive text to be inserted at the beginning.
+#+TEXT:        Several lines may be given.
+#+OPTIONS:     H:2 num:t toc:t \n:nil @:t ::t |:t ^:t f:t TeX:t ...
+#+BIND:        lisp-var lisp-val, e.g.: org-export-latex-low-levels itemize
+	       You need to confirm using these, or configure org-export-allow-BIND
+#+LINK_UP:     the ``up&#39;&#39; link of an exported page
+#+LINK_HOME:   the ``home&#39;&#39; link of an exported page
+#+LATEX_HEADER: extra line(s) for the LaTeX header, like \usepackage{xyz}
+#+EXPORT_SELECT_TAGS:   Tags that select a tree for export
+#+EXPORT_EXCLUDE_TAGS:  Tags that exclude a tree from export
+#+XSLT:        the XSLT stylesheet used by DocBook exporter to generate FO file
+</code></pre><!-- raw HTML omitted -->
+<ul>
+<li>
+<p>HUGO</p>
+<ul>
+<li><code>#+HUGO_BASE_DIR</code> ：指定了 hugo 博客文件夹的位置</li>
+<li><code>#+HUGO_FRONT_MATTER_FORMAT</code> ：指定了 front matter 的格式</li>
+<li><code>#+HUGO_AUTO_SET_LASTMODE</code> ：ox-hugo 自动更新博客的修改时间</li>
+<li><code>#+HUGO_SECTION</code> ：指定了这篇博客会发布到的目录，比如 post 或者 posts</li>
+</ul>
+</li>
+</ul>
+<h4 id="内容元数据">内容元数据<a hidden class="anchor" aria-hidden="true" href="#内容元数据">#</a></h4>
+<h2 id="向外--export">向外(export)<a hidden class="anchor" aria-hidden="true" href="#向外--export">#</a></h2>
+<p>org-mode导出其他文档，配置导出快捷键hook</p>
+<h3 id="emacs配置">Emacs配置<a hidden class="anchor" aria-hidden="true" href="#emacs配置">#</a></h3>
+<h4 id="添加导出latex类">添加导出LaTeX类<a hidden class="anchor" aria-hidden="true" href="#添加导出latex类">#</a></h4>
+<p>update the list of LaTeX classes and associated header</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;ox-latex</span>)
+</span></span><span style="display:flex;"><span>(add-to-list <span style="color:#e6db74">&#39;org-latex-classes</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;beamer&#34;</span>  <span style="color:#75715e">;类名</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;\\documentclass[presentation]{beamer}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">\\usepackage{XeCJK}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">\\setCJKmainfont{SimSun}&#34;</span>  <span style="color:#75715e">;导出文件的头部，包含在一个字符串内</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#e6db74">&#34;\\section{%s}&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;\\section*{%s}&#34;</span>)  <span style="color:#75715e">; 标题的映射</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#e6db74">&#34;\\subsection{%s}&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;\\subsection*{%s}&#34;</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#e6db74">&#34;\\subsubsection{%s}&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;\\subsubsection*{%s}&#34;</span>)))
+</span></span></code></pre></div><h4 id="添加hook--c-c-c-e">添加hook(C-c C-e)<a hidden class="anchor" aria-hidden="true" href="#添加hook--c-c-c-e">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(with-eval-after-load <span style="color:#e6db74">&#39;ox</span>  <span style="color:#75715e">;加载ox后</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;ox-beamer</span>))  <span style="color:#75715e">;引入beamer，其他ox-为前缀</span>
+</span></span></code></pre></div><h3 id="pdf文档">PDF文档<a hidden class="anchor" aria-hidden="true" href="#pdf文档">#</a></h3>
+<p>根据Latex文件头，反推org文件中的标记，及Emacs中的配置</p>
+<h3 id="幻灯片">幻灯片<a hidden class="anchor" aria-hidden="true" href="#幻灯片">#</a></h3>
+<h4 id="网页幻灯片reveal-dot-js">网页幻灯片reveal.js<a hidden class="anchor" aria-hidden="true" href="#网页幻灯片reveal-dot-js">#</a></h4>
+<h4 id="论文幻灯片beamer">论文幻灯片Beamer<a hidden class="anchor" aria-hidden="true" href="#论文幻灯片beamer">#</a></h4>
+<ul>
+<li>org → Beamer tex <strong>快捷键</strong> ： <code>C-c C-e l b</code></li>
+<li>Beamer相关的org文件头</li>
+</ul>
+<!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-nil" data-lang="nil">#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+#+BEAMER_HEADER: \usepackage{XeCJK}
+#+BEAMER_HEADER: \setCJKmainfont{SimSun}
+#+OPTIONS: H:2
+#+BEAMER_THEME: CambridgeUS
+#+TITLE:
+#+AUTHOR:
+#+EMAIL:
+#+DATE:
+</code></pre><ul>
+<li>Emacs<a href="https://github.com/fniessen/refcard-org-beamer#requirements">配置</a>导出类别 <code>beamer</code> ，对应org文件头中的 <code>#+LaTex_CLASS: beamer</code></li>
+</ul>
+<!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-nil" data-lang="nil">(eval-after-load &#34;ox-latex&#34;
+
+  ;; update the list of LaTeX classes and associated header (encoding, etc.)
+  ;; and structure
+  &#39;(add-to-list &#39;org-latex-classes
+		`(&#34;beamer&#34;
+		  ,(concat &#34;\\documentclass[presentation]{beamer}\n&#34;
+			   &#34;\\usepackage{XeCJK}&#34;
+			   &#34;\\setCJKmainfont{SimSun}\n&#34;)
+		  (&#34;\\section{%s}&#34; . &#34;\\section*{%s}&#34;)
+		  (&#34;\\subsection{%s}&#34; . &#34;\\subsection*{%s}&#34;)
+		  (&#34;\\subsubsection{%s}&#34; . &#34;\\subsubsection*{%s}&#34;))))
+</code></pre><h3 id="markdown">markdown<a hidden class="anchor" aria-hidden="true" href="#markdown">#</a></h3>
+<ul>
+<li>org → md原样导出：= md语法 =</li>
+<li><a href="https://it-boyer.github.io/post/%E5%8D%9A%E5%AE%A2%E7%AB%99%E5%8A%A1/org-download%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">org-mode插入图片</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-nil" data-lang="nil">@@md: ![维基娘的姊妹们（由左至右）：维基共享资源娘、维基百科娘、维基语录娘](https://upload.wikimedia.org/wikipedia/commons/1/1f/Wiki-sisters.png) @@
+</code></pre><h2 id="参考">参考<a hidden class="anchor" aria-hidden="true" href="#参考">#</a></h2>
+<ul>
+<li><a href="https://chinasanshi.github.io/2017/12/27/tools/org-mode/">元数据</a></li>
+<li><a href="https://orgmode.org/worg/exporters/beamer/tutorial.html">Writing Beamer presentations in org-mode</a></li>
+</ul>
+
+
+  </div><aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">Table of Contents</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#%e5%86%85%e5%8a%9f" aria-label="内功">内功</a><ul>
+                            
+                    <li>
+                        <a href="#%e6%a0%87%e8%ae%b0%e7%ac%a6%e5%8f%b7%e4%b8%8e%e5%8a%9f%e8%83%bd" aria-label="标记符号与功能">标记符号与功能</a></li>
+                    <li>
+                        <a href="#%e5%bf%ab%e6%8d%b7%e9%94%ae" aria-label="快捷键">快捷键</a></li>
+                    <li>
+                        <a href="#%e5%bf%ab%e9%80%9f%e6%8f%92%e5%85%a5%e5%9b%ba%e5%ae%9a%e5%86%85%e5%ae%b9" aria-label="快速插入固定内容">快速插入固定内容</a></li>
+                    <li>
+                        <a href="#%e5%85%83%e6%95%b0%e6%8d%ae" aria-label="元数据">元数据</a><ul>
+                            
+                    <li>
+                        <a href="#%e6%96%87%e6%a1%a3%e5%85%83%e6%95%b0%e6%8d%ae" aria-label="文档元数据">文档元数据</a></li>
+                    <li>
+                        <a href="#%e5%86%85%e5%ae%b9%e5%85%83%e6%95%b0%e6%8d%ae" aria-label="内容元数据">内容元数据</a></li></ul>
+                    </li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e5%90%91%e5%a4%96--export" aria-label="向外(export)">向外(export)</a><ul>
+                            
+                    <li>
+                        <a href="#emacs%e9%85%8d%e7%bd%ae" aria-label="Emacs配置">Emacs配置</a><ul>
+                            
+                    <li>
+                        <a href="#%e6%b7%bb%e5%8a%a0%e5%af%bc%e5%87%balatex%e7%b1%bb" aria-label="添加导出LaTeX类">添加导出LaTeX类</a></li>
+                    <li>
+                        <a href="#%e6%b7%bb%e5%8a%a0hook--c-c-c-e" aria-label="添加hook(C-c C-e)">添加hook(C-c C-e)</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#pdf%e6%96%87%e6%a1%a3" aria-label="PDF文档">PDF文档</a></li>
+                    <li>
+                        <a href="#%e5%b9%bb%e7%81%af%e7%89%87" aria-label="幻灯片">幻灯片</a><ul>
+                            
+                    <li>
+                        <a href="#%e7%bd%91%e9%a1%b5%e5%b9%bb%e7%81%af%e7%89%87reveal-dot-js" aria-label="网页幻灯片reveal.js">网页幻灯片reveal.js</a></li>
+                    <li>
+                        <a href="#%e8%ae%ba%e6%96%87%e5%b9%bb%e7%81%af%e7%89%87beamer" aria-label="论文幻灯片Beamer">论文幻灯片Beamer</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#markdown" aria-label="markdown">markdown</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e5%8f%82%e8%80%83" aria-label="参考">参考</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="http://izrchen.github.io/">Nathan’s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

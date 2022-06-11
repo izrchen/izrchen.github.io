@@ -171,14 +171,58 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Hugo博文发布
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>总体流程 org to markdown(本地) to markdown(仓库)
+Figure 1: 总体流程
+操作1：org to 本地markdown 从org文件夹中，将 博文.org 导出到hugo目录 hugo/content/post/下 博文.md
+文件头（生成）   相关配置
+#&#43;HUGO_BASE_DIR: &lt;导出文件的保存路径&gt; #&#43;HUGO_SECTION: post #&#43;TITLE: &lt;文章标题&gt; #&#43;DESCRIPTION: &lt;文章描述&gt; #&#43;HUGO_CATEGORIES: &lt;文章分类&gt; #&#43;HUGO_TAGS: &lt;文章标签&gt; #&#43;HUGO_SLUG: &lt;网页访问路径&gt; #&#43;HUGO_DRAFT: true #&#43;AUTHOR: &lt;作者&gt; #&#43;DATE: &#34;2022-01-01&#34;     快捷键
+ 输入 hmatter ，再按 TAB    内容写作 导出（命令）  C-c C-e H h  操作2：markdown 本地预览 在 hugo 根目录的命令行输入： hugo server -D...</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-06-09 00:00:00 +0800 CST'>June 9, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;114 words&nbsp;·&nbsp;Nathan</footer>
+  <a class="entry-link" aria-label="post link to Hugo博文发布" href="http://izrchen.github.io/post/hugo-doc-publish/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>广工毕业论文LaTeX模板
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>安装 模板使用  hyperlink=color 表示超链接有颜色，若将值改为 none ，则超链接为黑色 默认：新章从奇数页开始，如要取消，在abstract后插入 \let\cleardoublepage\clearpage  答辩PPT：Beamer 插入背景图  beamer设置指定页背景 设置页面的背景图片 Beamer加入背景图片  作者，标题等信息的简写  为了使封面和页脚不同，可通过 \author[陈致然]{学生：陈致然 \quad 指导老师：左亚尧} 设置 在org-mode中 #&#43;AUTHOR: 无法设置，可通过 #&#43;BEAMER_HEADER: 写Latex进行设置。  插入logo 首页插入Logo \titlegraphic{\includegraphics[width=0.2\linewidth]{./figure/GDUT_logo.png}} 除首页外，其他页插入Logo 不要在文件头，而在文档中输入 \logo{\includegraphics[scale=0.1]{./figure/GDUT_logo.png}}
+参考  beamer模板设计（七）titlepage、logo和目录页 - 知乎 Add and Position a Logo in Beamer - LaTeX Beamer beamer入门 第7节 设置logo - 任意位置（1）-哔哩哔哩 (゜-゜)つロ 干杯~-bilibili  分栏 左右分 \begin{columns} \column{0.6\textwidth} 123 \column{0.4\textwidth} 456 \end{columns} 上下分 \begin{frame} \begin{columns} 123 \end{columns} 456 \end{frame} </p>
+  </section>
+  <footer class="entry-footer"><span title='2022-05-21 00:00:00 +0800 CST'>May 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;66 words&nbsp;·&nbsp;Nathan</footer>
+  <a class="entry-link" aria-label="post link to 广工毕业论文LaTeX模板" href="http://izrchen.github.io/post/gdut-thesis-latex/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Hugo搭建
     </h2>
   </header>
   <section class="entry-content">
-    <p>配置  实现自定义主题：复制主题的 layout 和 asserts 到博客根目录 添加目录 添加标签和分类 修改配置文件格式：toml → yaml  添加搜索，标签和分类功能  给hugo添加搜索功能  添加目录 配置文件config toml和yaml的格式区别  param:config 和 param=config  config文件内容  baseURL language theme title menu params  ShowWordCount: true ShowReadingTime: true   outputs  home    博文编辑的文件头 #&#43;HUGO_BASE_DIR: /mnt/c/myText/hugo/ #&#43;HUGO_SECTION: post #&#43;TITLE: Hugo搭建 #&#43;DESCRIPTION: 搭建流程 #&#43;HUGO_CATEGORIES: Tech #&#43;HUGO_TAGS: 博客 #&#43;HUGO_SLUG: hugo-construction #&#43;HUGO_DRAFT: true #&#43;AUTHOR: #&#43;DATE: 博文图片嵌入 方案一：截图图传  图传网站：https://sm.ms/ 提取图片链接，可使用JS代码提取 插入HTML标识，key： htmlpic  #&#43;CAPTION: #&#43;ATTR_HTML: :width $2% :align center picture url 方案二：SVG  svg在线编辑：https://svg....</p>
+    <p>搭建流程  创建Github仓库 开启Github Pages 安装Hugo 编辑博文  Github Pages github新建repo 命名为 izrchen.github.io
+添加本地Hugo项目 echo &#34;# izrchen.github.io&#34; &gt;&gt; README.md git init git add README.md git commit -m &#34;first commit&#34; git branch -M main git remote add origin https://github.com/izrchen/izrchen.github.io.git git push -u origin main 修改Github Pages的branch main
+网页托管：Github Pages 创建仓库 开启Github Pages  注意GitHub Pages中Source的Branch为gh-pages  配置  实现自定义主题：复制主题的 layout 和 asserts 到博客根目录 添加目录 添加标签和分类 修改配置文件格式：toml → yaml  添加搜索，标签和分类功能  给hugo添加搜索功能  添加目录 配置文件config toml和yaml的格式区别  param:config 和 param=config  config文件内容  baseURL language theme title menu params  ShowWordCount: true ShowReadingTime: true   outputs  home    博文编辑的文件头 #&#43;HUGO_BASE_DIR: /mnt/c/myText/hugo/ #&#43;HUGO_SECTION: post #&#43;TITLE: Hugo搭建 #&#43;DESCRIPTION: 搭建流程 #&#43;HUGO_CATEGORIES: Tech #&#43;HUGO_TAGS: 博客 #&#43;HUGO_SLUG: hugo-construction #&#43;HUGO_DRAFT: true #&#43;AUTHOR: #&#43;DATE: 其他操作  评论功能 tags 域名  使用org-mode编辑博客 笔记导出：org-publish...</p>
   </section>
-  <footer class="entry-footer"><span title='2022-05-10 00:00:00 +0800 CST'>May 10, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;109 words&nbsp;·&nbsp;Nathan</footer>
+  <footer class="entry-footer"><span title='2022-05-10 00:00:00 +0800 CST'>May 10, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;369 words&nbsp;·&nbsp;Nathan</footer>
   <a class="entry-link" aria-label="post link to Hugo搭建" href="http://izrchen.github.io/post/hugo-construction/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>org-mode功夫
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>内功  目的实现文档快捷编辑  标记符号与功能 快捷键 快速插入固定内容  主要图片 标记符号  元数据 文档元数据 #&#43;TITLE: the title to be shown (default is the buffer name) #&#43;AUTHOR: the author (default taken from user-full-name) #&#43;DATE: a date, an Org timestamp1, or a format string for format-time-string #&#43;EMAIL: his/her email address (default from user-mail-address) #&#43;DESCRIPTION: the page description, e.g. for the XHTML meta tag #&#43;KEYWORDS: the page keywords, e.g. for the XHTML meta tag #&#43;LANGUAGE: language for HTML, e....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-05-09 00:00:00 +0800 CST'>May 9, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;317 words&nbsp;·&nbsp;Nathan</footer>
+  <a class="entry-link" aria-label="post link to org-mode功夫" href="http://izrchen.github.io/post/org-doc/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -195,18 +239,6 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>org-mode与pandoc转各种格式的文件
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>导出markdown 导出beamer 参考  emacsorphanage/ox-pandoc: Another org-mode exporter via pandoc.  </p>
-  </section>
-  <footer class="entry-footer"><span title='2022-05-08 00:00:00 +0800 CST'>May 8, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;9 words&nbsp;·&nbsp;Nathan</footer>
-  <a class="entry-link" aria-label="post link to org-mode与pandoc转各种格式的文件" href="http://izrchen.github.io/post/org-mode-and-pandoc-to-any/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
     <h2>org-mode导出适配hugo的markdown
     </h2>
   </header>
@@ -216,6 +248,18 @@
   </section>
   <footer class="entry-footer"><span title='2022-05-08 00:00:00 +0800 CST'>May 8, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;126 words&nbsp;·&nbsp;Nathan</footer>
   <a class="entry-link" aria-label="post link to org-mode导出适配hugo的markdown" href="http://izrchen.github.io/post/org-mode%E5%AF%BC%E5%87%BA%E9%80%82%E9%85%8Dhugo%E7%9A%84markdown/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>数据治理岗
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>数据价值的创造过程  数据生成 数据处理 数据消费  数据    数据类型 数据量 更新频率 数据质量 生命周期     元数据 1 1 4 4   参考数据 2 2 3 3   主数据 3 3 2 2   记录数据 4 4 1 1    记录类数据  事务数据：数据库CRUD事务操作的系统日志 业务数据：记录业务活动的交易数据，为了完成业务流程而存储的业务操作 日志数据：用户访问数据（从CRUD抽离出来）  元数据 Meta Data  大数据：元数据（Metadata） - 何永灿 - 博客园 定义：对数据（数值）的描述，存储着关于数据的数据信息，在数据管理的所有活动中都有出现。 目的：降低人与数据之间的沟通成本。描述越准确，数据的使用成本越低。  例子 功能  描述数据仓库中的数据 定义输入和输出数据仓库的数据 给出数据抽取工作的时间安排 检测数据一致性要求的执行情况 衡量数据质量  分类（按用途）  技术元数据 业务元数据 操作元数据 管理元数据  分类（按领域）  数据结构：数据集的名称、关系、字段、约束等； 数据部署：数据集的物理位置； 数据流：数据集之间的流程依赖关系（非参照依赖），包括数据集到另一个数据集的规则； 质量度量：数据集上可以计算的度量； 度量逻辑关系：数据集度量之间的逻辑运算关系； ETL过程：过程运行的顺序，并行、串行； 数据集快照：一个时间点上，数据在所有数据集上的分布情况； 星型模式元数据：事实表、维度、属性、层次等； 报表语义层：报表指标的规则、过滤条件物理名称和业务名称的对应； 数据访问日志：哪些数据何时被何人访问； 质量稽核日志：何时、何度量被稽核，其结果； 数据装载日志：哪些数据何时被何人装载  元模型  本质：沟通工具，IT空间的问题描述语言 元模型和流程是方法论的两个方面 元数据 语言：语言的出现极大地提升了沟通效率 概念：感性认识的理性抽象 共识：概念的接受度确定了共识的范围 从IT世界的问题空间中，找到现实世界对应的问题，并在解决方案空间中找到技术解决路径。  参考数据 Reference Data  元数据的可能取值范围 类比：数据字典，码表    元数据 引用数据     性别 男，女   国家 100&#43;个国家      主数据 Master Data  定义：用于定义业务对象，描述业务实体的数据，由实体名及其多种属性组成 ，以及实体之间关系的描述 。 外延：  在事实表中，主数据常用作维度。 在记录类数据中，主数据常作为主键 身高主数据，身高度量和描述   实体属性的维度（以客户实体为例）  客户基本信息：企业名称、组织机构代码、工商登记号、税号、所属行业 客户联系信息：联系电话、注册地址、办公地址、邮箱、网址 客户特征信息：主营业务、企业规模、经营理念、营销策略 客户账户信息：银行账户、开户名称、开户行、开户行地址 客户财务信息：…    分析类数据  相关概念  业务过程  定义：一个不可拆分的行为事件。例如下单、支付、退款都是业务过程。  度量（数值）  定义：提供用户感兴趣的*聚合*数据，一般为统计量。根据维度不同，会有不同的度量值。 例子：  中国男人（维度）平均身高（度量） 支付（事件）金额（度量）    维度（实体）  定义：  观察和分析事物或指标的不同角度 实际存在，且不因事件而变化的实体   外延：  在事实表中用于描述业务过程所处的环境信息 度量的分类方式   例子：  对于 指标=销售额，角度有：时间周期，产品类型，地域，销售主体 每个维度具有相应的属性：  “地理位置”维度的属性有“纬度”，“经度”，“城市名称” 买家维度的属性有：支付金额，买家姓名、手机号     分类  定性维度：文字描述类，例如姓名、地名等 定量维度主要是数值描述类，如工资、年龄等   杂项维度：使用较多却无法归属到相应的维度中的属性  指标（维度&amp;过程的度量）  定义：度量的细致化 分类，其中派生和衍生是对原子的加减乘除  原子指标= 业务过程 &#43;度量，如 交易 笔数、 交易 金额、 在线 用户数，不加任何修饰 派生指标=原子指标&#43; 统计周期 &#43; 统计粒度，如 昨日 境外输入病例  添加统计维度后的指标，如平均购买金额、生产计划完成值，累计问题数、同比、环比、占比   衍生指标=原子指标的组合，如：客单价 = 支付金额 / 买家数。   从 0-1 构建指标体系 - 知乎  事实表 用于描述业务过程的详细信息，由维度编码和事实数据组成。...</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-04-20 00:00:00 +0800 CST'>April 20, 2022</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;832 words&nbsp;·&nbsp;Nathan</footer>
+  <a class="entry-link" aria-label="post link to 数据治理岗" href="http://izrchen.github.io/post/data-governance-jobs/"></a>
 </article>
 
 <article class="post-entry"> 

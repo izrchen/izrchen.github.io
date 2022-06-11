@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>工具 on Nathan’s Blog</title>
+    <link>http://izrchen.github.io/categories/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on Nathan’s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 21 May 2022 00:00:00 +0800</lastBuildDate><atom:link href="http://izrchen.github.io/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>广工毕业论文LaTeX模板</title>
+      <link>http://izrchen.github.io/post/gdut-thesis-latex/</link>
+      <pubDate>Sat, 21 May 2022 00:00:00 +0800</pubDate>
+      
+      <guid>http://izrchen.github.io/post/gdut-thesis-latex/</guid>
+      <description>广东工业大学硕博毕业论文LaTeX模板的使用方法</description>
+    </item>
+    
+    <item>
+      <title>org-mode功夫</title>
+      <link>http://izrchen.github.io/post/org-doc/</link>
+      <pubDate>Mon, 09 May 2022 00:00:00 +0800</pubDate>
+      
+      <guid>http://izrchen.github.io/post/org-doc/</guid>
+      <description>利用Emacs和elisp实现标记语言org-mode各种操作</description>
+    </item>
+    
+  </channel>
+</rss>

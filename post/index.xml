@@ -6,7 +6,25 @@
     <description>Recent content in Posts on Nathan’s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 10 May 2022 00:00:00 +0800</lastBuildDate><atom:link href="http://izrchen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Jun 2022 00:00:00 +0800</lastBuildDate><atom:link href="http://izrchen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo博文发布</title>
+      <link>http://izrchen.github.io/post/hugo-doc-publish/</link>
+      <pubDate>Thu, 09 Jun 2022 00:00:00 +0800</pubDate>
+      
+      <guid>http://izrchen.github.io/post/hugo-doc-publish/</guid>
+      <description>博文发布流程</description>
+    </item>
+    
+    <item>
+      <title>广工毕业论文LaTeX模板</title>
+      <link>http://izrchen.github.io/post/gdut-thesis-latex/</link>
+      <pubDate>Sat, 21 May 2022 00:00:00 +0800</pubDate>
+      
+      <guid>http://izrchen.github.io/post/gdut-thesis-latex/</guid>
+      <description>广东工业大学硕博毕业论文LaTeX模板的使用方法</description>
+    </item>
+    
     <item>
       <title>Hugo搭建</title>
       <link>http://izrchen.github.io/post/hugo-construction/</link>
@@ -14,6 +32,15 @@
       
       <guid>http://izrchen.github.io/post/hugo-construction/</guid>
       <description>Hugo的搭建流程</description>
+    </item>
+    
+    <item>
+      <title>org-mode功夫</title>
+      <link>http://izrchen.github.io/post/org-doc/</link>
+      <pubDate>Mon, 09 May 2022 00:00:00 +0800</pubDate>
+      
+      <guid>http://izrchen.github.io/post/org-doc/</guid>
+      <description>利用Emacs和elisp实现标记语言org-mode各种操作</description>
     </item>
     
     <item>
@@ -26,15 +53,6 @@
     </item>
     
     <item>
-      <title>org-mode与pandoc转各种格式的文件</title>
-      <link>http://izrchen.github.io/post/org-mode-and-pandoc-to-any/</link>
-      <pubDate>Sun, 08 May 2022 00:00:00 +0800</pubDate>
-      
-      <guid>http://izrchen.github.io/post/org-mode-and-pandoc-to-any/</guid>
-      <description>导出markdown 导出beamer 参考  emacsorphanage/ox-pandoc: Another org-mode exporter via pandoc.  </description>
-    </item>
-    
-    <item>
       <title>org-mode导出适配hugo的markdown</title>
       <link>http://izrchen.github.io/post/org-mode%E5%AF%BC%E5%87%BA%E9%80%82%E9%85%8Dhugo%E7%9A%84markdown/</link>
       <pubDate>Sun, 08 May 2022 00:00:00 +0800</pubDate>
@@ -42,6 +60,15 @@
       <guid>http://izrchen.github.io/post/org-mode%E5%AF%BC%E5%87%BA%E9%80%82%E9%85%8Dhugo%E7%9A%84markdown/</guid>
       <description>Hugo  评论功能 tags 域名  参考  Hugo中文文档 使用 Hugo 和 GitHub Pages 搭建静态博客 | Shall We Code? GitHub Pages 搭建教程 - 少数派 Hugo + GitHub Pages 搭建自己的网站 Github Pages + Hugo 搭建静态博客 | 胡刘郏的技术博客 在 Github Pages 上部署 Hugo - 点半九  本地Hugo  启动 hugo server -D  Github Pages github新建repo 命名为 izrchen.github.io
 添加本地Hugo项目 echo &amp;#34;# izrchen.github.io&amp;#34; &amp;gt;&amp;gt; README.md git init git add README.md git commit -m &amp;#34;first commit&amp;#34; git branch -M main git remote add origin https://github.</description>
+    </item>
+    
+    <item>
+      <title>数据治理岗</title>
+      <link>http://izrchen.github.io/post/data-governance-jobs/</link>
+      <pubDate>Wed, 20 Apr 2022 00:00:00 +0800</pubDate>
+      
+      <guid>http://izrchen.github.io/post/data-governance-jobs/</guid>
+      <description>数据治理岗位的理解</description>
     </item>
     
     <item>

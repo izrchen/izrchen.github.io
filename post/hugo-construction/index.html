@@ -98,8 +98,8 @@
   "keywords": [
     "流程"
   ],
-  "articleBody": "配置  实现自定义主题：复制主题的 layout 和 asserts 到博客根目录 添加目录 添加标签和分类 修改配置文件格式：toml → yaml  添加搜索，标签和分类功能  给hugo添加搜索功能  添加目录 配置文件config toml和yaml的格式区别  param:config 和 param=config  config文件内容  baseURL language theme title menu params  ShowWordCount: true ShowReadingTime: true   outputs  home    博文编辑的文件头 #+HUGO_BASE_DIR: /mnt/c/myText/hugo/ #+HUGO_SECTION: post #+TITLE: Hugo搭建 #+DESCRIPTION: 搭建流程 #+HUGO_CATEGORIES: Tech #+HUGO_TAGS: 博客 #+HUGO_SLUG: hugo-construction #+HUGO_DRAFT: true #+AUTHOR: #+DATE: 博文图片嵌入 方案一：截图图传  图传网站：https://sm.ms/ 提取图片链接，可使用JS代码提取 插入HTML标识，key： htmlpic  #+CAPTION: #+ATTR_HTML: :width $2% :align center picture url 方案二：SVG  svg在线编辑：https://svg.wxeditor.com/ 将svg图片保存到本地 复制svg代码到org或者md文件中，根据需要进行修改 为保证md文件中的svg原样输出到html，需在目标代码的前后插入 {{rawhtml}} 和 {{/rawhtml}}  \"两个花括号\"  \"两个花括号\" 目标代码 \"两个花括号\"  \"两个花括号\" 参考  Blog养成记(4) Hugo中增加tags等分类 | ZHENG Zi’ou Sulv’s Blog 喔唷，崩溃啦！ Hugo添加文章目录toc Hugo博客目录放在侧边 | PaperMod主题 | Sulv’s Blog org-mode导出适配hugo的markdown | Nathan’s Blog hugo博客搭建 | PaperMod主题 - 云+社区 - 腾讯云 使用Hugo Shortcode和svg标签构建自定义图形！  ",
-  "wordCount" : "109",
+  "articleBody": "搭建流程  创建Github仓库 开启Github Pages 安装Hugo 编辑博文  Github Pages github新建repo 命名为 izrchen.github.io\n添加本地Hugo项目 echo \"# izrchen.github.io\"  README.md git init git add README.md git commit -m \"first commit\" git branch -M main git remote add origin https://github.com/izrchen/izrchen.github.io.git git push -u origin main 修改Github Pages的branch main\n网页托管：Github Pages 创建仓库 开启Github Pages  注意GitHub Pages中Source的Branch为gh-pages  配置  实现自定义主题：复制主题的 layout 和 asserts 到博客根目录 添加目录 添加标签和分类 修改配置文件格式：toml → yaml  添加搜索，标签和分类功能  给hugo添加搜索功能  添加目录 配置文件config toml和yaml的格式区别  param:config 和 param=config  config文件内容  baseURL language theme title menu params  ShowWordCount: true ShowReadingTime: true   outputs  home    博文编辑的文件头 #+HUGO_BASE_DIR: /mnt/c/myText/hugo/ #+HUGO_SECTION: post #+TITLE: Hugo搭建 #+DESCRIPTION: 搭建流程 #+HUGO_CATEGORIES: Tech #+HUGO_TAGS: 博客 #+HUGO_SLUG: hugo-construction #+HUGO_DRAFT: true #+AUTHOR: #+DATE: 其他操作  评论功能 tags 域名  使用org-mode编辑博客 笔记导出：org-publish\n 使用 Emacs Org-Mode 写博客 - 日知录 用 Org-Mode 与 GithubPages 搭建个人博客  导出配置 (setq ;; nil as default to avoid leaking sensitive info unintentionally, ;; overwritten in per-project settings bellow org-html-postamble nil org-publish-project-alist '( (\"blog-attachments\" :base-directory \"/mnt/c/myText/local-blog\" :base-extension \"png\\\\|jpg\" :recursive t :publishing-directory \"/mnt/c/myText/blog/images\" :publishing-function org-publish-attachment) (\"blog\" :base-directory \"/mnt/c/myText/local-blog\" :base-extension \"org\" :recursive t :publishing-directory \"/mnt/c/myText/blog/_posts\" :publishing-function org-html-publish-to-html :body-only t ;; Only export section between   :html-link-use-abs-url t )) org-export-allow-bind-keywords t ; I like \"#+BIND:var value\" )  配置解读  导出命令 在emacs里=M-x org-publish RET blog RET=\n注意事项  org文件命名格式：=yyyy:mm:dd-filename.org=  yaml font matter自动生成 自动生成文字  emacs yasnippet自定义模版配置与使用-洪加煌博客 Emacs yasnippet - 码农教程 Emacs安装配置yasnippet - 代码先锋网 路径 .emacs.d/snippets/org-mode/yaml-font-matter   安装    配置\n;; 文件自动生成模板 (require 'yasnippet) (yas-global-mode 1)   org-jekyll-mode  jsuper/org-jekyll-mode: Emacs extensions for writing Jekyll post with org-mode Using org to Blog with Jekyll 使用org-mode撰写jekyll博客  网站主题修改   参考博客\n 吴润写字的地方 博客建站记录（3）| 主题配置与修改（上） - 空谷札记 | ArvinX’s Blog    参考  Blog养成记(4) Hugo中增加tags等分类 | ZHENG Zi’ou Sulv’s Blog 喔唷，崩溃啦！ Hugo添加文章目录toc Hugo博客目录放在侧边 | PaperMod主题 | Sulv’s Blog org-mode导出适配hugo的markdown | Nathan’s Blog hugo博客搭建 | PaperMod主题 - 云+社区 - 腾讯云 使用Hugo Shortcode和svg标签构建自定义图形！ 如何让org · 大专栏 Publishing options (The Org Manual) 基于 org-mode 项目发布功能（ox-publish）的静态站点生成框架 - Org-mode - Emacs China 用 Org-Mode 与 GithubPages 搭建个人博客 Github Pages + jekyll 全面介绍极简搭建个人网站和博客 - 知乎 博客建站记录（3）| 主题配置与修改（上） - 空谷札记 | ArvinX’s Blog 使用org-mode撰写jekyll博客 使用 Emacs Org-Mode 写博客 - 日知录 插入图片  Jekyll 下使用 Org-mode-Yichengr 使用Emacs中的org-mode写cnblogs之图片插入 - yangwen0228 - 博客园 (18条消息) 解决github pages和github .md文件图片不显示_一世一生命的博客-CSDN博客 Jekyll和Github Pages搭建的网站图片不显示 - Don 博客 | Don Blog   Hugo中文文档 使用 Hugo 和 GitHub Pages 搭建静态博客 | Shall We Code? GitHub Pages 搭建教程 - 少数派 Hugo + GitHub Pages 搭建自己的网站 Github Pages + Hugo 搭建静态博客 | 胡刘郏的技术博客 在 Github Pages 上部署 Hugo - 点半九  ",
+  "wordCount" : "369",
   "inLanguage": "en",
   "datePublished": "2022-05-10T00:00:00+08:00",
   "dateModified": "2022-05-10T00:00:00+08:00",
@@ -220,11 +220,37 @@
     <div class="post-description">
       Hugo的搭建流程
     </div>
-    <div class="post-meta"><span title='2022-05-10 00:00:00 +0800 CST'>May 10, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;109 words&nbsp;·&nbsp;Nathan
+    <div class="post-meta"><span title='2022-05-10 00:00:00 +0800 CST'>May 10, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;369 words&nbsp;·&nbsp;Nathan
 
 </div>
   </header> 
-  <div class="post-content"><h2 id="配置">配置<a hidden class="anchor" aria-hidden="true" href="#配置">#</a></h2>
+  <div class="post-content"><h2 id="搭建流程">搭建流程<a hidden class="anchor" aria-hidden="true" href="#搭建流程">#</a></h2>
+<ol>
+<li>创建Github仓库</li>
+<li>开启Github Pages</li>
+<li>安装Hugo</li>
+<li>编辑博文</li>
+</ol>
+<h3 id="github-pages">Github Pages<a hidden class="anchor" aria-hidden="true" href="#github-pages">#</a></h3>
+<h4 id="github新建repo">github新建repo<a hidden class="anchor" aria-hidden="true" href="#github新建repo">#</a></h4>
+<p>命名为 <code>izrchen.github.io</code></p>
+<h4 id="添加本地hugo项目">添加本地Hugo项目<a hidden class="anchor" aria-hidden="true" href="#添加本地hugo项目">#</a></h4>
+<pre tabindex="0"><code class="language-git" data-lang="git">echo &#34;# izrchen.github.io&#34; &gt;&gt; README.md
+git init
+git add README.md
+git commit -m &#34;first commit&#34;
+git branch -M main
+git remote add origin https://github.com/izrchen/izrchen.github.io.git
+git push -u origin main
+</code></pre><h4 id="修改github-pages的branch">修改Github Pages的branch<a hidden class="anchor" aria-hidden="true" href="#修改github-pages的branch">#</a></h4>
+<p><code>main</code></p>
+<h3 id="网页托管-github-pages">网页托管：Github Pages<a hidden class="anchor" aria-hidden="true" href="#网页托管-github-pages">#</a></h3>
+<h4 id="创建仓库">创建仓库<a hidden class="anchor" aria-hidden="true" href="#创建仓库">#</a></h4>
+<h4 id="开启github-pages">开启Github Pages<a hidden class="anchor" aria-hidden="true" href="#开启github-pages">#</a></h4>
+<ul>
+<li>注意GitHub Pages中Source的Branch为gh-pages</li>
+</ul>
+<h2 id="配置">配置<a hidden class="anchor" aria-hidden="true" href="#配置">#</a></h2>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> 实现自定义主题：复制主题的 <code>layout</code> 和 <code>asserts</code> 到博客根目录</li>
 <li><input checked="" disabled="" type="checkbox"> 添加目录</li>
@@ -271,29 +297,93 @@
 #+HUGO_DRAFT: true
 #+AUTHOR:
 #+DATE:
-</code></pre><h2 id="博文图片嵌入">博文图片嵌入<a hidden class="anchor" aria-hidden="true" href="#博文图片嵌入">#</a></h2>
-<h3 id="方案一-截图图传">方案一：截图图传<a hidden class="anchor" aria-hidden="true" href="#方案一-截图图传">#</a></h3>
+</code></pre><h2 id="其他操作">其他操作<a hidden class="anchor" aria-hidden="true" href="#其他操作">#</a></h2>
 <ul>
-<li>图传网站：<a href="https://sm.ms/">https://sm.ms/</a></li>
-<li>提取图片链接，可使用JS代码提取</li>
-<li>插入HTML标识，key： <code>htmlpic</code></li>
+<li>评论功能</li>
+<li>tags</li>
+<li>域名</li>
+</ul>
+<h3 id="使用org-mode编辑博客">使用org-mode编辑博客<a hidden class="anchor" aria-hidden="true" href="#使用org-mode编辑博客">#</a></h3>
+<p>笔记导出：org-publish</p>
+<ul>
+<li><a href="https://victor72.github.io/blog/2016/06/16/with-org-mode-setup-up-personal-blog/">使用 Emacs Org-Mode 写博客 - 日知录</a></li>
+<li><a href="https://lgfang.github.io/computer/2015/11/02/org-mode-github-pages">用 Org-Mode 与 GithubPages 搭建个人博客</a></li>
+</ul>
+<h4 id="导出配置">导出配置<a hidden class="anchor" aria-hidden="true" href="#导出配置">#</a></h4>
+<pre tabindex="0"><code class="language-nil" data-lang="nil">(setq
+      ;; nil as default to avoid leaking sensitive info unintentionally,
+      ;; overwritten in per-project settings bellow
+      org-html-postamble nil
+      org-publish-project-alist
+      &#39;(
+	(&#34;blog-attachments&#34;
+	 :base-directory &#34;/mnt/c/myText/local-blog&#34;
+	 :base-extension &#34;png\\|jpg&#34;
+	 :recursive t
+	 :publishing-directory &#34;/mnt/c/myText/blog/images&#34;
+	 :publishing-function org-publish-attachment)
+
+	(&#34;blog&#34;
+	 :base-directory &#34;/mnt/c/myText/local-blog&#34;
+	 :base-extension &#34;org&#34;
+	 :recursive t
+	 :publishing-directory &#34;/mnt/c/myText/blog/_posts&#34;
+	 :publishing-function org-html-publish-to-html
+	 :body-only t ;; Only export section between &lt;body&gt; &lt;/body&gt;
+	 :html-link-use-abs-url t
+	 ))
+
+      org-export-allow-bind-keywords t  ; I like &#34;#+BIND:var value&#34;
+)
+</code></pre><!-- raw HTML omitted -->
+<ul>
+<li>配置解读</li>
+</ul>
+<h4 id="导出命令">导出命令<a hidden class="anchor" aria-hidden="true" href="#导出命令">#</a></h4>
+<p>在emacs里=M-x org-publish RET blog RET=</p>
+<h4 id="注意事项">注意事项<a hidden class="anchor" aria-hidden="true" href="#注意事项">#</a></h4>
+<ul>
+<li>org文件命名格式：=yyyy:mm:dd-filename.org=</li>
+</ul>
+<h3 id="yaml-font-matter自动生成">yaml font matter自动生成<a hidden class="anchor" aria-hidden="true" href="#yaml-font-matter自动生成">#</a></h3>
+<h4 id="自动生成文字">自动生成文字<a hidden class="anchor" aria-hidden="true" href="#自动生成文字">#</a></h4>
+<ul>
+<li><a href="http://www.fidding.me/article/18">emacs yasnippet自定义模版配置与使用-洪加煌博客</a></li>
+<li><a href="http://www.manongjc.com/article/113438.html">Emacs yasnippet - 码农教程</a></li>
+<li><a href="https://www.codeleading.com/article/63523514631/">Emacs安装配置yasnippet - 代码先锋网</a></li>
+<li>路径 <code>.emacs.d/snippets/org-mode/yaml-font-matter</code></li>
 </ul>
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-nil" data-lang="nil">#+CAPTION:
-#+ATTR_HTML: :width $2% :align center
-picture url
-</code></pre><h3 id="方案二-svg">方案二：SVG<a hidden class="anchor" aria-hidden="true" href="#方案二-svg">#</a></h3>
 <ul>
-<li>svg在线编辑：<a href="https://svg.wxeditor.com/">https://svg.wxeditor.com/</a></li>
-<li>将svg图片保存到本地</li>
-<li>复制svg代码到org或者md文件中，根据需要进行修改</li>
-<li>为保证md文件中的svg原样输出到html，需在目标代码的前后插入 <code>{{rawhtml}}</code> 和 <code>{{/rawhtml}}</code></li>
+<li>安装</li>
 </ul>
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-nil" data-lang="nil">&#34;两个花括号&#34; &lt;rawhtml&gt; &#34;两个花括号&#34;
-目标代码
-&#34;两个花括号&#34; &lt;/rawhtml&gt; &#34;两个花括号&#34;
-</code></pre><h2 id="参考">参考<a hidden class="anchor" aria-hidden="true" href="#参考">#</a></h2>
+<ul>
+<li>
+<p>配置</p>
+<pre tabindex="0"><code class="language-nil" data-lang="nil">;; 文件自动生成模板
+(require &#39;yasnippet)
+(yas-global-mode 1)
+</code></pre></li>
+</ul>
+<h4 id="org-jekyll-mode">org-jekyll-mode<a hidden class="anchor" aria-hidden="true" href="#org-jekyll-mode">#</a></h4>
+<ul>
+<li><a href="https://github.com/jsuper/org-jekyll-mode">jsuper/org-jekyll-mode: Emacs extensions for writing Jekyll post with org-mode</a></li>
+<li><a href="https://orgmode.org/worg/org-tutorials/org-jekyll.html">Using org to Blog with Jekyll</a></li>
+<li><a href="https://jsuper.github.io/emacs/using-org-mode-to-write-jekyll-post.html#sec-2-2">使用org-mode撰写jekyll博客</a></li>
+</ul>
+<h4 id="网站主题修改">网站主题修改<a hidden class="anchor" aria-hidden="true" href="#网站主题修改">#</a></h4>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>参考博客</p>
+<ul>
+<li><a href="http://wu.run/">吴润写字的地方</a></li>
+<li><a href="https://blog.arvinx.com/2017/modify-the-theme/">博客建站记录（3）| 主题配置与修改（上） - 空谷札记 | ArvinX&rsquo;s Blog</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="参考">参考<a hidden class="anchor" aria-hidden="true" href="#参考">#</a></h2>
 <ul>
 <li><a href="https://orianna-zzo.github.io/sci-tech/2018-01/blog%E5%85%BB%E6%88%90%E8%AE%B04-hugo%E4%B8%AD%E5%A2%9E%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/">Blog养成记(4) Hugo中增加tags等分类 | ZHENG Zi&rsquo;ou</a></li>
 <li><a href="https://www.sulvblog.cn/">Sulv&rsquo;s Blog</a></li>
@@ -303,6 +393,28 @@ picture url
 <li><a href="http://localhost:1313/post/org-mode%E5%AF%BC%E5%87%BA%E9%80%82%E9%85%8Dhugo%E7%9A%84markdown/">org-mode导出适配hugo的markdown | Nathan’s Blog</a></li>
 <li><a href="https://cloud.tencent.com/developer/article/1944138">hugo博客搭建 | PaperMod主题 - 云+社区 - 腾讯云</a></li>
 <li><a href="https://beyondstars.xyz/posts/hugo-shortcode-svg/">使用Hugo Shortcode和svg标签构建自定义图形！</a></li>
+<li><a href="https://www.dazhuanlan.com/innerunniverse/topics/1399917">如何让org · 大专栏</a></li>
+<li><a href="https://orgmode.org/manual/Publishing-options.html">Publishing options (The Org Manual)</a></li>
+<li><a href="https://emacs-china.org/t/org-mode-ox-publish/13869">基于 org-mode 项目发布功能（ox-publish）的静态站点生成框架 - Org-mode - Emacs China</a></li>
+<li><a href="https://lgfang.github.io/computer/2015/11/02/org-mode-github-pages">用 Org-Mode 与 GithubPages 搭建个人博客</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/51240503">Github Pages + jekyll 全面介绍极简搭建个人网站和博客 - 知乎</a></li>
+<li><a href="https://blog.arvinx.com/2017/modify-the-theme/">博客建站记录（3）| 主题配置与修改（上） - 空谷札记 | ArvinX&rsquo;s Blog</a></li>
+<li><a href="https://jsuper.github.io/emacs/using-org-mode-to-write-jekyll-post.html">使用org-mode撰写jekyll博客</a></li>
+<li><a href="https://victor72.github.io/blog/2016/06/16/with-org-mode-setup-up-personal-blog/">使用 Emacs Org-Mode 写博客 - 日知录</a></li>
+<li>插入图片
+<ul>
+<li><a href="https://blog.yicheng.ren/posts/2020/05/11/org-mode.html">Jekyll 下使用 Org-mode-Yichengr</a></li>
+<li><a href="https://www.cnblogs.com/yangwen0228/p/6287455.html">使用Emacs中的org-mode写cnblogs之图片插入 - yangwen0228 - 博客园</a></li>
+<li><a href="https://blog.csdn.net/qq_30684181/article/details/93681734">(18条消息) 解决github pages和github .md文件图片不显示_一世一生命的博客-CSDN博客</a></li>
+<li><a href="http://rjgc.cn/2019/06/28/Jekyll%E5%92%8CGithub-Pages%E6%90%AD%E5%BB%BA%E7%9A%84%E7%BD%91%E7%AB%99%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA/">Jekyll和Github Pages搭建的网站图片不显示 - Don 博客 | Don Blog</a></li>
+</ul>
+</li>
+<li><a href="https://www.gohugo.org/">Hugo中文文档</a></li>
+<li><a href="https://www.waynerv.com/posts/setup-blog-with-hugo-and-github-pages/">使用 Hugo 和 GitHub Pages 搭建静态博客 | Shall We Code?</a></li>
+<li><a href="https://sspai.com/post/54608">GitHub Pages 搭建教程 - 少数派</a></li>
+<li><a href="https://polarisxu.studygolang.com/posts/talk/myblog-with-hugo-github-pages/">Hugo + GitHub Pages 搭建自己的网站</a></li>
+<li><a href="https://www.huliujia.com/blog/7dab9c2ab6132aaa3fe0da2f7f9fe3264bdd8d75/">Github Pages + Hugo 搭建静态博客 | 胡刘郏的技术博客</a></li>
+<li><a href="https://www.dianbanjiu.com/post/%E5%9C%A8-github-pages-%E4%B8%8A%E9%83%A8%E7%BD%B2-hugo/">在 Github Pages 上部署 Hugo - 点半九</a></li>
 </ul>
 
 
@@ -314,6 +426,28 @@ picture url
             </summary>
 
             <div class="inner"><ul>
+                    <li>
+                        <a href="#%e6%90%ad%e5%bb%ba%e6%b5%81%e7%a8%8b" aria-label="搭建流程">搭建流程</a><ul>
+                            
+                    <li>
+                        <a href="#github-pages" aria-label="Github Pages">Github Pages</a><ul>
+                            
+                    <li>
+                        <a href="#github%e6%96%b0%e5%bb%barepo" aria-label="github新建repo">github新建repo</a></li>
+                    <li>
+                        <a href="#%e6%b7%bb%e5%8a%a0%e6%9c%ac%e5%9c%b0hugo%e9%a1%b9%e7%9b%ae" aria-label="添加本地Hugo项目">添加本地Hugo项目</a></li>
+                    <li>
+                        <a href="#%e4%bf%ae%e6%94%b9github-pages%e7%9a%84branch" aria-label="修改Github Pages的branch">修改Github Pages的branch</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e7%bd%91%e9%a1%b5%e6%89%98%e7%ae%a1-github-pages" aria-label="网页托管：Github Pages">网页托管：Github Pages</a><ul>
+                            
+                    <li>
+                        <a href="#%e5%88%9b%e5%bb%ba%e4%bb%93%e5%ba%93" aria-label="创建仓库">创建仓库</a></li>
+                    <li>
+                        <a href="#%e5%bc%80%e5%90%afgithub-pages" aria-label="开启Github Pages">开启Github Pages</a></li></ul>
+                    </li></ul>
+                    </li>
                     <li>
                         <a href="#%e9%85%8d%e7%bd%ae" aria-label="配置">配置</a><ul>
                             
@@ -333,12 +467,28 @@ picture url
                     <li>
                         <a href="#%e5%8d%9a%e6%96%87%e7%bc%96%e8%be%91%e7%9a%84%e6%96%87%e4%bb%b6%e5%a4%b4" aria-label="博文编辑的文件头">博文编辑的文件头</a></li>
                     <li>
-                        <a href="#%e5%8d%9a%e6%96%87%e5%9b%be%e7%89%87%e5%b5%8c%e5%85%a5" aria-label="博文图片嵌入">博文图片嵌入</a><ul>
+                        <a href="#%e5%85%b6%e4%bb%96%e6%93%8d%e4%bd%9c" aria-label="其他操作">其他操作</a><ul>
                             
                     <li>
-                        <a href="#%e6%96%b9%e6%a1%88%e4%b8%80-%e6%88%aa%e5%9b%be%e5%9b%be%e4%bc%a0" aria-label="方案一：截图图传">方案一：截图图传</a></li>
+                        <a href="#%e4%bd%bf%e7%94%a8org-mode%e7%bc%96%e8%be%91%e5%8d%9a%e5%ae%a2" aria-label="使用org-mode编辑博客">使用org-mode编辑博客</a><ul>
+                            
                     <li>
-                        <a href="#%e6%96%b9%e6%a1%88%e4%ba%8c-svg" aria-label="方案二：SVG">方案二：SVG</a></li></ul>
+                        <a href="#%e5%af%bc%e5%87%ba%e9%85%8d%e7%bd%ae" aria-label="导出配置">导出配置</a></li>
+                    <li>
+                        <a href="#%e5%af%bc%e5%87%ba%e5%91%bd%e4%bb%a4" aria-label="导出命令">导出命令</a></li>
+                    <li>
+                        <a href="#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9" aria-label="注意事项">注意事项</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#yaml-font-matter%e8%87%aa%e5%8a%a8%e7%94%9f%e6%88%90" aria-label="yaml font matter自动生成">yaml font matter自动生成</a><ul>
+                            
+                    <li>
+                        <a href="#%e8%87%aa%e5%8a%a8%e7%94%9f%e6%88%90%e6%96%87%e5%ad%97" aria-label="自动生成文字">自动生成文字</a></li>
+                    <li>
+                        <a href="#org-jekyll-mode" aria-label="org-jekyll-mode">org-jekyll-mode</a></li>
+                    <li>
+                        <a href="#%e7%bd%91%e7%ab%99%e4%b8%bb%e9%a2%98%e4%bf%ae%e6%94%b9" aria-label="网站主题修改">网站主题修改</a></li></ul>
+                    </li></ul>
                     </li>
                     <li>
                         <a href="#%e5%8f%82%e8%80%83" aria-label="参考">参考</a>

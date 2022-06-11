@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>数据治理岗 | Nathan’s Blog</title>
+<meta name="keywords" content="" />
+<meta name="description" content="数据治理岗位的理解">
+<meta name="author" content="Nathan">
+<link rel="canonical" href="http://izrchen.github.io/post/data-governance-jobs/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.7bdb1411b29ec9fed2b6395a081eabcb3262e7311bda855249d433c8b30a926e.css" integrity="sha256-e9sUEbKeyf7StjlaCB6ryzJi5zEb2oVSSdQzyLMKkm4=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://izrchen.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://izrchen.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://izrchen.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://izrchen.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="http://izrchen.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="数据治理岗" />
+<meta property="og:description" content="数据治理岗位的理解" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://izrchen.github.io/post/data-governance-jobs/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-20T00:00:00&#43;08:00" />
+<meta property="article:modified_time" content="2022-04-20T00:00:00&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数据治理岗"/>
+<meta name="twitter:description" content="数据治理岗位的理解"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://izrchen.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "数据治理岗",
+      "item": "http://izrchen.github.io/post/data-governance-jobs/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "数据治理岗",
+  "name": "数据治理岗",
+  "description": "数据治理岗位的理解",
+  "keywords": [
+    
+  ],
+  "articleBody": "数据价值的创造过程  数据生成 数据处理 数据消费  数据    数据类型 数据量 更新频率 数据质量 生命周期     元数据 1 1 4 4   参考数据 2 2 3 3   主数据 3 3 2 2   记录数据 4 4 1 1    记录类数据  事务数据：数据库CRUD事务操作的系统日志 业务数据：记录业务活动的交易数据，为了完成业务流程而存储的业务操作 日志数据：用户访问数据（从CRUD抽离出来）  元数据 Meta Data  大数据：元数据（Metadata） - 何永灿 - 博客园 定义：对数据（数值）的描述，存储着关于数据的数据信息，在数据管理的所有活动中都有出现。 目的：降低人与数据之间的沟通成本。描述越准确，数据的使用成本越低。  例子 功能  描述数据仓库中的数据 定义输入和输出数据仓库的数据 给出数据抽取工作的时间安排 检测数据一致性要求的执行情况 衡量数据质量  分类（按用途）  技术元数据 业务元数据 操作元数据 管理元数据  分类（按领域）  数据结构：数据集的名称、关系、字段、约束等； 数据部署：数据集的物理位置； 数据流：数据集之间的流程依赖关系（非参照依赖），包括数据集到另一个数据集的规则； 质量度量：数据集上可以计算的度量； 度量逻辑关系：数据集度量之间的逻辑运算关系； ETL过程：过程运行的顺序，并行、串行； 数据集快照：一个时间点上，数据在所有数据集上的分布情况； 星型模式元数据：事实表、维度、属性、层次等； 报表语义层：报表指标的规则、过滤条件物理名称和业务名称的对应； 数据访问日志：哪些数据何时被何人访问； 质量稽核日志：何时、何度量被稽核，其结果； 数据装载日志：哪些数据何时被何人装载  元模型  本质：沟通工具，IT空间的问题描述语言 元模型和流程是方法论的两个方面 元数据 语言：语言的出现极大地提升了沟通效率 概念：感性认识的理性抽象 共识：概念的接受度确定了共识的范围 从IT世界的问题空间中，找到现实世界对应的问题，并在解决方案空间中找到技术解决路径。  参考数据 Reference Data  元数据的可能取值范围 类比：数据字典，码表    元数据 引用数据     性别 男，女   国家 100+个国家      主数据 Master Data  定义：用于定义业务对象，描述业务实体的数据，由实体名及其多种属性组成 ，以及实体之间关系的描述 。 外延：  在事实表中，主数据常用作维度。 在记录类数据中，主数据常作为主键 身高主数据，身高度量和描述   实体属性的维度（以客户实体为例）  客户基本信息：企业名称、组织机构代码、工商登记号、税号、所属行业 客户联系信息：联系电话、注册地址、办公地址、邮箱、网址 客户特征信息：主营业务、企业规模、经营理念、营销策略 客户账户信息：银行账户、开户名称、开户行、开户行地址 客户财务信息：…    分析类数据  相关概念  业务过程  定义：一个不可拆分的行为事件。例如下单、支付、退款都是业务过程。  度量（数值）  定义：提供用户感兴趣的*聚合*数据，一般为统计量。根据维度不同，会有不同的度量值。 例子：  中国男人（维度）平均身高（度量） 支付（事件）金额（度量）    维度（实体）  定义：  观察和分析事物或指标的不同角度 实际存在，且不因事件而变化的实体   外延：  在事实表中用于描述业务过程所处的环境信息 度量的分类方式   例子：  对于 指标=销售额，角度有：时间周期，产品类型，地域，销售主体 每个维度具有相应的属性：  “地理位置”维度的属性有“纬度”，“经度”，“城市名称” 买家维度的属性有：支付金额，买家姓名、手机号     分类  定性维度：文字描述类，例如姓名、地名等 定量维度主要是数值描述类，如工资、年龄等   杂项维度：使用较多却无法归属到相应的维度中的属性  指标（维度\u0026过程的度量）  定义：度量的细致化 分类，其中派生和衍生是对原子的加减乘除  原子指标= 业务过程 +度量，如 交易 笔数、 交易 金额、 在线 用户数，不加任何修饰 派生指标=原子指标+ 统计周期 + 统计粒度，如 昨日 境外输入病例  添加统计维度后的指标，如平均购买金额、生产计划完成值，累计问题数、同比、环比、占比   衍生指标=原子指标的组合，如：客单价 = 支付金额 / 买家数。   从 0-1 构建指标体系 - 知乎  事实表 用于描述业务过程的详细信息，由维度编码和事实数据组成。\n统计粒度  说法一：维度的组合，指明统计范围，如某卖家某省份的某指标，粒度=卖家+省份 说法二：数据汇总的程度。例如，时间维度的统计粒度为年、季、月、周或日等。  数据间的关系 \r\rFigure 1: 数据关系\n\r\r 所有元数据 → 进行整体规划、抽象描述、进而设计出 → 元模型 根据元模型采集元数据信息：标题、作者、出版商 if书本=数据：  元数据=存储着关于数据的数据信息=(标题_i、作者姓名_i、出版商_i、版权细则_i、目录_i、页码_i) (标题_i、作者姓名_i、出版商_i、版权细则_i、目录_i、页码_i) 抽象化→ 元模型=(标题、作者姓名、出版商、版权细则、目录、页码)    元数据\u0026主数据  元数据是目录，主数据是正文，元数据用于辅助找到主数据  数据管理 元数据管理  从元数据到元数据管理，这篇文章彻底讲清楚了 - 知乎  元模型管理  元模型维护：增删改发布 元模型统计：分类、使用情况、变更追溯 元模型生命周期管理  元数据管理  元数据的维护：增删改 元数据关系的维护：建立，删除，跟踪 元数据生命周期管理：管理、跟踪元数据的整个生命周期  元数据分析 包括血缘分析（血统分析）、影响分析、实体关联分析、实体影响分析、主机拓扑分析、指标一致性分析等。\n主数据管理MDM  主数据管理(Master Data Management)基础 - 知乎 通过技术，创建和维护一个可靠的，可持续的，精确的，安全的数据环境，形成一个一致的主数据视图。 信息孤岛的原因：应用程序为支持某个系统而设计的，它们拥有自己的信息技术设施，包括应用相关的数据存储和定义。 问题：主数据依赖于应用，随着数量的增多，通过点对点连接的方式同步数据，会变得更加复杂 解决：建立一个信息集成、管理和共享的系统化解决方案，MDM。 分类  单个主题域  Product Information Management Customer Information Management   多主题域    MDM系统  MDM的技术基础 支持多种主数据类型，且这些类型与行业无关 使用方法  CollaborativeAuthoring(协同型) Operational（操作型） Analytical（分析型）   实现风格  Consolidation Implementation Style(合并风格) Registry Implementation Style(登记风格) Coexistence Implementation Style(共存风格) Transactional Hub Implementation Style(事务HUB风格)   关键功能  Master Data Lifecycle Management（Master Data 生命周期管理） Data Quality Management（数据质量管理） Master Data Harmonization（Master Data 协调和统一） Analysis and InsightCapabilities（分析功能）    数据管理框架 DCMM  Data management capability maturity assessment model 数据管理能力成熟度评估模型 DCMM模型是一个整合了标准规范、管理方法论、评估模型等多方面内容的综合框架 组织内部数据能力的八个组成  数据战略：数据战略规划、实施、评估 数据治理：数据治理的组织、建设、沟通 数据架构：数据模型、数据分布、数据集成与共享、元数据管理 数据应用：数据分析、数据开放共享、数据服务 数据安全：数据安全策略、管理、审计 数据质量管理：数据质量管理需求、检查、分析、提升 数据标准：业务数据、参考数据和主数据、数据元、指标数据 数据生命周期：数据需求、数据设计和开放、数据运维、数据退役   数据成为五大生产要素之一  2020年4月9日，《中共中央国务院关于构建更加完善的要素市场化配置体制机制的意见》中首次将“数据”与土地、劳动力、资本、技术并列为五大生产要素      数据架构\n 定义数据需求、指导对数据资产的整合和控制、使数据投资与业务战略相匹配的一 套整体构件规范 数据模型：定义与规范业务经营、管理和决策活动需要的组织数据需求 数据分布：确定各类数据资产在组织内部的合理部署 数据集成与共享：实现组织的各类数据资产在组织内整合在一起 元数据管理：关于元数据的创建、存储、整合与控制等一整套流程集合    DAMA  Data Management Association 国际数据管理协会   年会    知识体系\n DAMA-BOK2.0 《DAMA 数据管理字典》 《DAMA数据管理知识体系》      DMBOK认证考试\n 中文：  GDGA（数据治理工程师） CDGP（数据治理专家）   英文：CDMP（Certified Data Management Professional）    战略一致性模型 战略一致性模型 抽象了各种数据管理方法的基本驱动因素。 模型的中心是数据和信息之间的关系。 信息通常与业务战略和数据的操作使用相关。 数据与信息技术和流程相关联，这些技术和过程支持可访问数据的物理系统。\nDAMA-DMBOK框架  Data Management Body of Knowledge 数据管理知识体系指南 数据控制：在数据管理和使用层面之上进行规划、监督和控制。 数据架构管理：定义数据资产管理蓝图。 数据开发：数据的分析、设计、实施、测试、部署、维护等工作。 数据操作管理：提供从数据获取到清除的技术支持。 数据安全管理：确保隐私、保密性和适当的访问权限等。 数据质量管理：定义、监测和提高数据质量。 参考数据和主数据管理：管理数据的黄金版本和副本。 数据仓库和商务智能管理：实现报告和分析。 文件和内容管理：管理数据库以外的数据 元数据管理：元数据的整合、控制以及提供元数据。  434数据管理框架   数据治理\n 保障数据管理活动顺利开展的控制活动 管理的管理 保障措施      数据管理\n 数据价值创造过程中三项数据管理活动  数据生成：数据架构管理 数据处理：数据生存周期管理 数据消费：数据应用管理        基础数据管理\n 贯穿数据价值创造过程的四项基础数据管理活动  数据质量管理 数据安全管理 数据标准管理 主数据和参考数据管理      数据治理  数据治理之元数据管理实践_ITPUB博客 谈谈数据治理：怎么做元数据管理？ | 人人都是产品经理 数据治理项目中怎么做元数据管理？|数据源|视图_网易订阅 数据治理之元数据管理，有哪些高效玩法_北京数语科技有限公司 工具：16款数据治理工具和软件，总有一款适合你_腾讯新闻 数据治理平台功能架构规划  定义  一文搞懂数据治理、数据管理、数据资产管理有什么不同_控制 数据资产是对数据资源的量化和资产化 数据治理是针对数据管理的质量控制规范  以企业资产的形式对数据进行优化、保护和利用的决策权利 对组织内人员、流程、技术和策略的编排，以从数据中获取最优价值    目标  一文读懂数据治理和数据中台的关系 - 知乎 数字化转型、中台、数据治理资料合集下载 数据管理、数据治理、数据中心、数据中台、数据湖、数据资产等的关系与区别？ - 知乎 促进数据价值的释放 让数据更好用 数据治理建设和应用的前提  保密性 完整性 可用性   数据生命周期  采集 传输 存储 共享 使用 销毁   建立对数据承载业务的理解 完整的企业数据资产地图  具体做法  消除数据孤岛，增大数据体量，避免重复开发，为后续数据互通与数据分析，提供数据原材料 提高数据质量，推进数据标准化，为数据流动创造条件，给后续任务提供有用的数据 保障数据安全的共享和应用。   步骤  找症状，明确目标  输入企业战略规划 输出数据治理初步沟通方案   理数据，现状分析  需求，现状调研表 问题列表   数据治理成熟度评估 数据质量问题归因 业务影响及实施优先级评估 制定数据治理行动路线和计划  业务 岗位认知 其他公司工作要求  「数据治理工程师招聘」_华为技术有限公司招聘-BOSS直聘 腾讯看点数据治理工程师 - 知乎  政务大数据中心资源池建设  (18条消息) 政务数据里的基础库、主题库、专题库_Leo笑的博客-CSDN博客_主题库 政务大数据中心 - 数字广东官网 硬  基础库，主题库（如出行），专题库（如某事件，活动）的建设  表现形式上以sql库为主，其实都是数据库表按一定规则组织到一起。 都是数据仓库. 建模   质量管理 对各应用系统的数据采集.ETL   软  对以上三项工作相关的，规章制度，工作流程，管理方案的制定    岗位工作内容   文档\n 体系规划   规范标准   数据需求项目的解决方案      开发\n  ETL数据开发\n 目的是整合企业中分散、零乱、标准不统一的数据 负责分布的、异构数据源中的数据，抽取到临时中间层（ODS）进行清洗，转换，集成，最后加载到数据仓库或数据集市 工作在临时中间层，承前启后的重要一环，使用ETL工具 工作面临的问题  数据来源于不同主机，SQL语句吃力 统一格式，代码吃力 处理数据，存储过程吃力   ETL工具优点  支持多种异构数据源连接 图形化界面操作方便 海量数据处理速度快，流程清洗      ETL工具\n kettle非实时 informatica实时，但是基于时间戳      项目经验\n 生产库到数据仓库的多表同步，kettle可以用一个程序搞定，informatica工具批量设计，但还是需要生成多个程序进行一一配置 增量表，每次运行后需要把最新一条数据的操作时间存到数据库中，下次运行就读取大于该时间的数据。  kettle有控件可以时间保存为变量 informatica读取时间到文件，再以文件为参数文件         实时流数据处理和云计算技术   OLTP   OLAP   业务数据支持    工作内容 政务大数据中心资源池建设  数据调研 数据模型设计 加工逻辑分析 脚本开发测试  质量管理  制定质量核验规则 支撑协调解决，数据管理和开发利用中的数据质量问题  数据交换过程设计与实施  数据交换过程详解 - 云+社区 - 腾讯云    数据交换的目的\n 数据是在流动、应用中创造价值的 解决数据孤岛问题 调和：在交换过程中，阻碍数据流动与共享的，不同数据内容、数据格式和数据质量。      数据交换面临问题\n 内容繁多，难以全面掌握 数据流转和逻辑过程复杂，难以追溯数据来源 数据结构和质量无法管控      数据交换面临挑战（努力方向）\n 单表数据交换效率低：整库数据交换 手工编写交换模型效率低：自动化批量模型生成 实时数据同步需额外操作：实时数据通道 PB级交换效率低：分段并行交换 数据交换的复用性低：通过业务模板创建模型 手工脚本脱敏效率低：数据自动脱敏      开发交换程序\n 开发数据交换模型    数据交换的数据标准\n 数据未动，标准先行 保证数据供应方和数据消费方对同一业务信息的定义和理解趋于一致 做法：提供可配置功能，按照标准对数据供应方的数据进行转换      自动采集元数据\n 数据交换的本质是基于元数据的交换 目标：提供数据资源的全面指南 元数据：定义了数据交换中的数据模式、来源及抽取转换规则    把控数据分布\n 完成部门核心职能的业务梳理及对应的信息资源梳理 编制信息资源目录，有什么，在哪里 建立信息资源的共享机制和管理制度 结合企业数据现状和业务属性，形成企业数据标准的业务属性和技术属性         应用系统的数据采集和任务配置    数据交换方式方法\n 不同类型数据的交换方式   实时数据交换   数据驱动的交换   指定周期的交换   事件驱动的交换    数据治理方案制定  元数据管理   数据元管理   数据质量管理   数据架构设计  技术 数据仓库 定义与特点  应用场景：面向决策和分析的数据处理。而数据库是面向生产业务的。 构成：数据仓库就是对不同应用系统中的多个异构数据源的有效集成。里面的数据按照主题进行重组，还包含历史数据，存放在数据仓库里的内容一般不会更新。 特点：面向主题的，集成的，相对稳定的，反映历史变化的 数据仓库本身既不生产数据也不消费数据，只是作为一个中间平台集成化地存储数据； 数据仓库实现的难度：在于整体架构的构建及ETL的设计 价值意义：数据应用  基本架构   数据仓库里的数据\n 细节数据 聚合数据 多维数据 分析数据      数据来源\n 数据仓库的源数据类型 | 网站数据分析 对于网站数据仓库而言，点击流日志是一块主要的数据来源，它是网站分析的基础数据；     数据处理    数据存储\n 数据仓库并不需要储存所有的原始数据，但数据仓库需要储存细节数据，并且导入的数据必须经过整理和转换使其面向主题。 知道用户的省份、城市足够，至于用户究竟住哪里可能只是物流商关心的事 细节数据是必需的，因为数据仓库的分析需求会时刻变化 面向主题是数据仓库的第一特性 整理成面向主题的组织形式才是真正地利于分析  点击流日志整理成页面（Page）、访问（Visit或Session）、用户（Visitor）三个主题      数据的聚合\n这里的聚合数据指的是基于特定需求的简单聚合（基于多维数据的聚合体现在多维数据模型中），简单聚合可以是网站的总Pageviews、Visits、Unique Visitors等汇总数据，也可以是Avg. time on page、Avg. time on site等平均数据，这些数据可以直接地展示于报表上。\n    多维数据模型\n 提供了多角度多层次的分析应用，比如基于时间维、地域维等构建的销售星形模型、雪花模型，可以实现在各时间维度和地域维度的交叉查询，以及基于时间维和地域维的细分。 所以多维数据模型的应用一般都是基于联机分析处理（Online Analytical Process, OLAP）的，而面向特定需求群体的数据集市也会基于多维数据模型进行构建。      业务模型\n基于某些数据分析和决策支持而建立起来的数据模型，比如我之前介绍过的用户评价模型、关联推荐模型、RFM分析模型等，或者是决策支持的线性规划模型、库存模型等；同时，数据挖掘中前期数据的处理也可以在这里完成。\n     数据访问    数据应用\n 数据仓库的价值 | 网站数据分析    报表展示\n 将聚合数据和多维分析数据展示到报表，提供了最为简单和直观的数据 理论上将数据仓库中的所有数据都开放即席查询，用户可以根据自己需要查询获取数据，并提供导出到外部Excel的功能    即席查询（Ad Hoc）\n 即席：当场。即席查询，当场去查询 用户根据自己的需求，灵活选择查询条件，系统根据用户选择，生成相应的统计报表。 与普通应用查询的区别：普通应用查询是定制开发的，即席查询是用户自定义查询条件的，临时产生的  普通查询可以通过建立索引、分区等技术来优化这些查询，使这些查询的效率很高。 即席查询是用户在使用时临时生产的，是一种松散类型的命令/查询，其值取决于某个变量，每次执行命令时，结果都不同，这取决于变量的值。   数据库必知词汇：即席查询(Ad Hoc)-阿里云开发者社区       数据分析   数据挖掘    元数据管理\n 元数据：解释性数据，用于记录数据仓库中模型的定义，各层级间的映射关系；监控数据仓库的数据状态及ETL的任务运行状态 元数据资料库：统一存储和管理元数据 目的：使数据仓库的设计、部署、操作和管理达成协同与一致     数据诊断    数据分层  详解数仓中的数据分层：ODS、DWD、DWM、DWS、ADS - 掘金    意义\n 清晰数据结构：每一个数据分层都有它的作用域和职责，在使用表的时候能更方便地定位和理解 减少重复开发：规范数据分层，开发一些通用的中间层数据，能够减少极大的重复计算 统一数据口径：通过数据分层，提供统一的数据出口，统一对外输出的数据口径 复杂问题简单化：将一个复杂的任务分解成多个步骤来完成，每一层解决特定的问题      数据源\n 操作数据库 ERP External Source      ETL\n  数据运营层\n ETL之后装入 ODS Operational Data Store 本层的数据，总体上大多是按照源头业务系统的分类方式而分类的        ODS贴源层\n ODS Operational Data Store 操作数据准备区 ETL之后装入本层，一般不做过多清洗，原封不动接入 本层的数据，总体上大多是按照源头业务系统的分类方式而分类的      DWD数据细节层\n数据细节层：data warehouse details，DWD 也称为ODS业务层和数据仓库的隔离层，保持和ODS相同的颗粒度 进行数据处理和规范操作：去空、脏数据，离群值 为了提高数据明细层的易用性，该层通常会才采用一些维度退化方法，将维度退化至事实表中，减少事实表和维表的关联。\n    DWB基础数据层（有的没有）\n 存储客观数据，一般用作中间层 （可以帮DWM完成）在DWD的数据基础上，对数据做轻度的聚合操作，生成一系列的中间表，提升公共指标的复用性，减少重复加工      DWM数据中间层\n数据中间层：Data Warehouse Middle，DWM； 该层是在DWD层的数据基础上，对数据做一些轻微的聚合操作，生成一些列的中间结果表，提升公共指标的复用性，减少重复加工的工作。 简答来说，对通用的核心维度进行聚合操作，算出相应的统计指标\n    DWS数据服务层\n 该层的数据表会相对比较少，一张表会涵盖比较多的业务内容 由于其字段较多，因此一般也会称该层的表为宽表 基于DWB上的基础数据、整合汇总某一主题，又称为数据集市或宽表 按照业务划分，如流量、订单、用户等，生成字段比较多的宽表 用于提供后续业务查询，OLAP分析，数据分发      ADS数据应用层\n数据应用层：Application Data Service，ADS；\n 该层主要是提供给数据产品和数据分析使用的数据 一般会存放在ES、Redis、PostgreSql等系统中供线上系统使用 也可能存放在hive或者Druid中，供数据分析和数据挖掘使用，比如常用的数据报表就是存在这里的。 OLAP前端 Web APP    建模方式  三范式建模和维度建模，到底该选哪一个？|数据仓库|数据源_网易订阅 一篇文章搞懂数据仓库：三范式与反范式-云社区-华为云 数据仓库不更新，所以可以反范式，提高效率而不出错    第三范式模型\n 不能存在传递依赖      多维数据模型(维度建模)\n 数据模型  范式模型（二维表） 多维数据模型  模式（种类）  星型 雪花型 星座型   实现  ROLAP MOLAP HOLAP   存储  按行 按列（数组）          概念\n 数据立方体 维：属性集合构成一个维度：时间维，空间维 维的层次：维的粒度。例如时间维：日期，月份，季度，年 维的成员：维的取值，数据项在某维中位置的描述。（2022年4月1日是在日期维上位置的描述） 度量：多维数组的一个取值。    多维分析的操作\n 数据仓库与数据挖掘-多维数据操作 - 云+社区 - 腾讯云 钻取：改变维的层次，变换分析的粒度。  向上钻取/上卷：抽象，减少维数。确诊，无症状，境外，本土-感染  (例如，从周到季度，再到年度)。   向下钻取：具体化。如时间更具体   切片：一部分维度上选定值，度量数据在剩余维上的分布，剩余维只有两个，一片就是二维  在某两个维上取一定区间的维成员或全部维成员，而在其余的维上选定一个维成员的操作。   切块：剩余维有三个或以上 旋转：改变展示方向，对应SQL语句里，就是改变SELECT后面字段的顺序。      广义的功能\n 广义上，任何能够有助于辅助用户理解数据的技术或者操作都可以作为OLAP功能 基本代理操作  当系统处于某种特殊状态时提醒分析员  示警报告：定义一些条件，一旦条件满足，系统会提醒分析员去做分析。如每日报告完成或月订货完成等通知分析员作分析。 时间报告：按日历和时钟提醒分析员。 异常报告：当超出边界条件时提醒分析员。如销售情况已超出预定义阈值的上限或下限时提醒分析员。     计算能力 模型计算  增加系统优化，统计分析，趋势分析等模型，以提高决策分析能力        优缺点\n  优点\n 基于分析优化的数据组织和存储模式 电子商务网站的操作数据库中记录的可能是某个时间点，某个用户购买了某个商品，并寄送到某个具体的地址的这种记录的集合，于是我们无法马上获取2010年的7月份到底有多少用户购买了商品，或者2010年的7月份有多少的浙江省用户购买了商品？  但是在基于多维模型的基础上，此类查询就变得简单了，只要在时间维上将数据聚合到2010年的7月份，同时在地域维上将数据聚合到浙江省的粒度就可以实现，这个就是OLAP的概念。\n    缺点\n 多维模型的缺点就是与关系模型相比其灵活性不够，一旦模型构建就很难进行更改。 订单的事实（事实表）  维度编码：时间、用户维 事实数据：商品数量、总价等度量（主题）   新需求：区分订单中包含了哪些商品  解决方法  关系模型：只需要另外再建一张表记录订单号和商品的对应关系即可 多维模型：无法再建一个新的维度，产品维，只能再建一个以产品为主题的事实     根据需求首先详细的设计模型，应该包含哪些维和度量，应该让数据保持在哪个粒度上才能满足用户的分析需求          模式\n 按照事实表和维表来构建数据仓库 星型模型（Star-schema）  擅长：OLTP-DW 星型模式之所以广泛被使用，在于针对各个维作了大量的预处理，如按照维进行预先的统计、分类、排序等。 维度建模的领域主要适用于数据集市层，它的最大的作用其实是为了解决数据仓库建模中的性能问题。   特别是针对 3NF 的建模方法，星型模式在性能上占据明显的优势。 雪花模型：当有一个或多个维表没有直接连接到事实表上，而是通过其他维表连接到事实表上  擅长：DW-OLAP环节   维度建模很难能够提供一个完整地描述真实业务实体之间的复杂关系的抽象方法。 星座模型：多张事实表，共享维度信息   星型和雪花型对比    对比内容 星型 雪花型     模型复杂度 0 1   层次结构  贴近OLTP   存储角度 产生冗余数据 不会产生冗余   擅长 DW-OLAP环节 OLTP-DW环节          事实表和维度表\n 事实表与维度表 - 知乎    事实表\n 事实表：表格里存储了能体现实际数据或详细数值，一般由维度编码和事实数据组成 事实表是指存储有事实记录的表，比如系统日志、销售记录等。事实表的记录在不断地增长，比如电商的商品订单表，就是类似的情况，所以事实表的体积通常是远大于其他表。      维度表\n 一般固定、变动少、数据有限、冗余大，为事实表节省空间；主键选择整数值，节省事实表的空间（如：联系人、物品种类） 维度表：表格里存放了具有独立属性和层次结构的数据，一般由维度编码和对应的维度说明(标签) 一个数据（或度量？主题？），可以属于不同维度，在不同维度上根据层次结构进行汇总统计(聚合) 维表，有时也称查找表（Lookup Table），是与事实表相对应的一种表；它保存了维度的属性值，可以跟事实表做关联，相当于将事实表上经常重复出现的属性抽取、规范出来用一张表进行管理。 高基数维度数据：一般是用户资料表、商品资料表类似的资料表，数据量可能是千万级或者上亿级别。 低基数维度数据：一般是配置表，比如枚举字段对应的中文含义，或者日期维表等；数据量可能就是个位数或者几千几万。 常见的维度表有：日期表（存储与日期对应的周、月、季度等的属性）、地点表（包含国家、省／州、城市等属性）等。        OLAP三种基本实现结构\n  ROLAP关系型\n 将分析用的多维数据存储在关系数据库中 将应用频率较高的查询作为实视图 以关系数据库为核心，以关系型结构进行多维数据的表示和存储。OLAP中间件实现其余的服务，这种技术有很大的伸缩性，但是关联操作使得响应效率降低。 由于ROLAP是用关系表来模拟多维数据的，因此其存取较MOLAP复杂。    RDBMS针对OLAP的优化\n 并行存储 并行查询 并行数据管理 基于成本的查询优化 位图索引 SQL的OLAP扩展（cube，rollup）        MOLAP多维型\n 将用到的多维数据物理上存储为多维数组的形式 通过基于数组的多维存储引擎，将数据映射到数据立方体数组结构中，实现数据的多维视图。这种技术的优点是数据的快速索引，缺点是数据集是稀疏的，存储利用率低。      HOLAP混合型\n将ROLAP的较大可伸缩性和MOLAP的快速计算紧密结合，实现数据的有效存储和快速检索。\n        实体建模法\n 事实：小明开车去上学 实体：小明，学校 事件：上学 说明：开车去 由于实体说明法只是一种抽象客观世界的方法，因此，注定了该建模方法只能局限在业务建模和领域概念建模阶段。    OLTP与OLAP对比  目的：为了操作数据；为了分析数据 数据库操作：增删改；查 优化方式：主码索引和散列；多维视图的操作 用途：存储当前交易数据；存储历史数据 面向：事务处理；面向主题 数据来源：日常业务；数据库或文件 设计：三范式（利于插入）；星型（利于查询）  数据库 范式  (18条消息) 数据库-第一范式、第二范式、第三范式、BC范式、第四范式简析_Yes_JiangShuai的博客-CSDN博客_bc范式 (18条消息) 数据库 之 理解 超键、候选键、主键、主属性、外键_稚枭天卓的博客-CSDN博客_主属性和主键的区别 第一范式：属性原子性 第二范式：非主键完全依赖于主键 第三范式：非主键不传递依赖于主键 BC范式：所有键，包括主键，都不传递依赖  数量依赖仓库号+物品号，仓库号依赖于管理员号，管理员号依赖于仓库号    数据库建模   步骤\n 数据库建模三步骤：概念模型-逻辑模型-物理模型      工具\n 盘点丨12款数据库建模工具特点，总有一款适合你！_ITPUB博客   powerdesigner   pgModeler   SQL Power Architect    数据库操作   范式\n (18条消息) 数据库（第一范式，第二范式，第三范式）_拾毅者的博客-CSDN博客_范式      存储过程\n 存储过程这一篇就够了 - 知乎 降低业务系统与数据库的交互     SQL  数据模型（关系模型）  关系模型详解【数据库概论】 - 知乎 数据结构：关系  学生信息表（姓名，年龄，班级）  关系名，关系的度为3     关系模式：关系的描述  R：关系名 U：属性集合：属性名的集合 D：属性组U中属性的所有属性值的集合 Dom：属性的类型和长度 F：属性间数据的依赖关系集合：对应现实世界事物特征间的一种依赖关系   关系实例：一个给定关系在某一时刻的元组的集合，即当前关系的值 数据操作：查询更新 数据完整性：实体完整性，参照完整性，自定义完整性 ”关系”理解为一张带数据的表，而“关系模式”是这张数据表的表结构 关系模型由关系数据结构,关系操作集合,关系完整性约束三部分组成  云计算 Hadoop Hive Hbase HDFS ",
+  "wordCount" : "832",
+  "inLanguage": "en",
+  "datePublished": "2022-04-20T00:00:00+08:00",
+  "dateModified": "2022-04-20T00:00:00+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Nathan"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://izrchen.github.io/post/data-governance-jobs/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nathan’s Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://izrchen.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://izrchen.github.io/" accesskey="h" title="Nathan’s Blog (Alt + H)">Nathan’s Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://izrchen.github.io/categories" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://izrchen.github.io/search" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://izrchen.github.io/archives" title="时间轴">
+                    <span>时间轴</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://izrchen.github.io/tags" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  
+    window.addEventListener('load', (event) => {
+        document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+      });
+  
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      数据治理岗
+    </h1>
+    <div class="post-description">
+      数据治理岗位的理解
+    </div>
+    <div class="post-meta"><span title='2022-04-20 00:00:00 +0800 CST'>April 20, 2022</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;832 words&nbsp;·&nbsp;Nathan
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="数据价值的创造过程">数据价值的创造过程<a hidden class="anchor" aria-hidden="true" href="#数据价值的创造过程">#</a></h2>
+<ul>
+<li>数据生成</li>
+<li>数据处理</li>
+<li>数据消费</li>
+</ul>
+<h2 id="数据">数据<a hidden class="anchor" aria-hidden="true" href="#数据">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>数据量</th>
+<th>更新频率</th>
+<th>数据质量</th>
+<th>生命周期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>元数据</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>参考数据</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>主数据</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>记录数据</td>
+<td>4</td>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="记录类数据">记录类数据<a hidden class="anchor" aria-hidden="true" href="#记录类数据">#</a></h3>
+<ul>
+<li>事务数据：数据库CRUD事务操作的系统日志</li>
+<li>业务数据：记录业务活动的交易数据，为了完成业务流程而存储的业务操作</li>
+<li>日志数据：用户访问数据（从CRUD抽离出来）</li>
+</ul>
+<h3 id="元数据-meta-data">元数据 Meta Data<a hidden class="anchor" aria-hidden="true" href="#元数据-meta-data">#</a></h3>
+<ul>
+<li><a href="https://www.cnblogs.com/volcao/p/13636557.html">大数据：元数据（Metadata） - 何永灿 - 博客园</a></li>
+<li>定义：对数据（数值）的描述，存储着关于数据的数据信息，在数据管理的所有活动中都有出现。</li>
+<li>目的：降低人与数据之间的沟通成本。描述越准确，数据的使用成本越低。</li>
+</ul>
+<h4 id="例子">例子<a hidden class="anchor" aria-hidden="true" href="#例子">#</a></h4>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="功能">功能<a hidden class="anchor" aria-hidden="true" href="#功能">#</a></h4>
+<ul>
+<li>描述数据仓库中的数据</li>
+<li>定义输入和输出数据仓库的数据</li>
+<li>给出数据抽取工作的时间安排</li>
+<li>检测数据一致性要求的执行情况</li>
+<li>衡量数据质量</li>
+</ul>
+<h4 id="分类-按用途">分类（按用途）<a hidden class="anchor" aria-hidden="true" href="#分类-按用途">#</a></h4>
+<ul>
+<li>技术元数据</li>
+<li>业务元数据</li>
+<li>操作元数据</li>
+<li>管理元数据</li>
+</ul>
+<h4 id="分类-按领域">分类（按领域）<a hidden class="anchor" aria-hidden="true" href="#分类-按领域">#</a></h4>
+<ul>
+<li>数据结构：数据集的名称、关系、字段、约束等；</li>
+<li>数据部署：数据集的物理位置；</li>
+<li>数据流：数据集之间的流程依赖关系（非参照依赖），包括数据集到另一个数据集的规则；</li>
+<li>质量度量：数据集上可以计算的度量；</li>
+<li>度量逻辑关系：数据集度量之间的逻辑运算关系；</li>
+<li>ETL过程：过程运行的顺序，并行、串行；</li>
+<li>数据集快照：一个时间点上，数据在所有数据集上的分布情况；</li>
+<li><del>星型模式元数据：事实表、维度、属性、层次等；</del></li>
+<li>报表语义层：报表指标的规则、过滤条件物理名称和业务名称的对应；</li>
+<li><del>数据访问日志：哪些数据何时被何人访问；</del></li>
+<li><del>质量稽核日志：何时、何度量被稽核，其结果；</del></li>
+<li><del>数据装载日志：哪些数据何时被何人装载</del></li>
+</ul>
+<h3 id="元模型">元模型<a hidden class="anchor" aria-hidden="true" href="#元模型">#</a></h3>
+<ul>
+<li>本质：<a href="https://www.jianshu.com/p/3ff6328c0bf0">沟通工具</a>，IT空间的问题描述语言</li>
+<li><a href="https://www.jianshu.com/p/9ee6cca9462d">元模型和流程是方法论的两个方面</a></li>
+<li>元数据</li>
+<li>语言：语言的出现极大地提升了沟通效率</li>
+<li>概念：感性认识的理性抽象</li>
+<li>共识：概念的接受度确定了共识的范围</li>
+<li>从IT世界的问题空间中，找到现实世界对应的问题，并在解决方案空间中找到技术解决路径。</li>
+</ul>
+<h3 id="参考数据-reference-data">参考数据 Reference Data<a hidden class="anchor" aria-hidden="true" href="#参考数据-reference-data">#</a></h3>
+<ul>
+<li>元数据的可能取值范围</li>
+<li>类比：数据字典，码表
+<table>
+<thead>
+<tr>
+<th>元数据</th>
+<th>引用数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>性别</td>
+<td>男，女</td>
+</tr>
+<tr>
+<td>国家</td>
+<td>100+个国家</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="主数据-master-data">主数据 Master Data<a hidden class="anchor" aria-hidden="true" href="#主数据-master-data">#</a></h3>
+<ul>
+<li>定义：用于定义业务对象，描述业务实体的数据，由实体名及其多种属性组成 <del>，以及实体之间关系的描述</del> 。</li>
+<li>外延：
+<ul>
+<li>在事实表中，主数据常用作维度。</li>
+<li>在记录类数据中，主数据常作为主键</li>
+<li><del>身高主数据，身高度量和描述</del></li>
+</ul>
+</li>
+<li>实体属性的维度（以客户实体为例）
+<ul>
+<li>客户基本信息：企业名称、组织机构代码、工商登记号、税号、所属行业</li>
+<li>客户联系信息：联系电话、注册地址、办公地址、邮箱、网址</li>
+<li>客户特征信息：主营业务、企业规模、经营理念、营销策略</li>
+<li>客户账户信息：银行账户、开户名称、开户行、开户行地址</li>
+<li>客户财务信息：&hellip;</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="分析类数据">分析类数据<a hidden class="anchor" aria-hidden="true" href="#分析类数据">#</a></h3>
+<ul>
+<li><a href="https://juejin.cn/post/6844904064648478727">相关概念</a></li>
+</ul>
+<h4 id="业务过程">业务过程<a hidden class="anchor" aria-hidden="true" href="#业务过程">#</a></h4>
+<ul>
+<li>定义：一个不可拆分的行为事件。例如下单、支付、退款都是业务过程。</li>
+</ul>
+<h4 id="度量-数值">度量（数值）<a hidden class="anchor" aria-hidden="true" href="#度量-数值">#</a></h4>
+<ul>
+<li>定义：提供用户感兴趣的*聚合*数据，一般为统计量。根据维度不同，会有不同的度量值。</li>
+<li>例子：
+<ul>
+<li>中国男人（维度）平均身高（度量）</li>
+<li>支付（事件）金额（度量）</li>
+</ul>
+</li>
+</ul>
+<h4 id="维度-实体">维度（实体）<a hidden class="anchor" aria-hidden="true" href="#维度-实体">#</a></h4>
+<ul>
+<li>定义：
+<ul>
+<li>观察和分析事物或指标的不同角度</li>
+<li>实际存在，且不因事件而变化的实体</li>
+</ul>
+</li>
+<li>外延：
+<ul>
+<li>在事实表中用于描述业务过程所处的环境信息</li>
+<li>度量的分类方式</li>
+</ul>
+</li>
+<li>例子：
+<ul>
+<li>对于 指标=销售额，角度有：时间周期，产品类型，地域，销售主体</li>
+<li>每个维度具有相应的属性：
+<ul>
+<li>“地理位置”维度的属性有“纬度”，“经度”，“城市名称”</li>
+<li>买家维度的属性有：支付金额，买家姓名、手机号</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>分类
+<ul>
+<li>定性维度：文字描述类，例如姓名、地名等</li>
+<li>定量维度主要是数值描述类，如工资、年龄等</li>
+</ul>
+</li>
+<li>杂项维度：使用较多却无法归属到相应的维度中的属性</li>
+</ul>
+<h4 id="指标-维度-and-过程的度量">指标（维度&amp;过程的度量）<a hidden class="anchor" aria-hidden="true" href="#指标-维度-and-过程的度量">#</a></h4>
+<ul>
+<li>定义：度量的细致化</li>
+<li>分类，其中派生和衍生是对原子的加减乘除
+<ul>
+<li>原子指标= <em>业务过程</em> +度量，如 <em>交易</em> 笔数、 <em>交易</em> 金额、 <em>在线</em> 用户数，不加任何修饰</li>
+<li>派生指标=原子指标+ <em>统计周期</em> + <!-- raw HTML omitted -->统计粒度<!-- raw HTML omitted --> ，如 <em>昨日</em> <!-- raw HTML omitted -->境外<!-- raw HTML omitted --> 输入病例
+<ul>
+<li>添加统计维度后的指标，如平均购买金额、生产计划完成值，累计问题数、同比、环比、占比</li>
+</ul>
+</li>
+<li>衍生指标=原子指标的组合，如：客单价 = 支付金额 / 买家数。</li>
+</ul>
+</li>
+<li><a href="https://zhuanlan.zhihu.com/p/348525872">从 0-1 构建指标体系 - 知乎</a></li>
+</ul>
+<h4 id="事实表">事实表<a hidden class="anchor" aria-hidden="true" href="#事实表">#</a></h4>
+<p>用于描述业务过程的详细信息，由维度编码和事实数据组成。</p>
+<h4 id="统计粒度">统计粒度<a hidden class="anchor" aria-hidden="true" href="#统计粒度">#</a></h4>
+<ul>
+<li>说法一：维度的组合，指明统计范围，如某卖家某省份的某指标，粒度=卖家+省份</li>
+<li>说法二：数据汇总的程度。例如，时间维度的统计粒度为年、季、月、周或日等。</li>
+</ul>
+<h3 id="数据间的关系">数据间的关系<a hidden class="anchor" aria-hidden="true" href="#数据间的关系">#</a></h3>
+<figure>
+    <img loading="lazy" src="../assets/note_img/data%20relation.png"
+         alt="Figure 1: 数据关系"/> <figcaption>
+            <p><!-- raw HTML omitted -->Figure 1: <!-- raw HTML omitted -->数据关系</p>
+        </figcaption>
+</figure>
+
+<ul>
+<li>所有元数据 → 进行整体规划、抽象描述、进而设计出 → 元模型</li>
+<li>根据元模型采集元数据信息：标题、作者、出版商</li>
+<li>if书本=数据：
+<ul>
+<li>元数据=存储着关于数据的数据信息=(标题_i、作者姓名_i、出版商_i、版权细则_i、目录_i、页码_i)</li>
+<li>(标题_i、作者姓名_i、出版商_i、版权细则_i、目录_i、页码_i) 抽象化→ 元模型=(标题、作者姓名、出版商、版权细则、目录、页码)</li>
+</ul>
+</li>
+</ul>
+<h4 id="元数据-and-主数据">元数据&amp;主数据<a hidden class="anchor" aria-hidden="true" href="#元数据-and-主数据">#</a></h4>
+<ul>
+<li>元数据是目录，主数据是正文，元数据用于辅助找到主数据</li>
+</ul>
+<h2 id="数据管理">数据管理<a hidden class="anchor" aria-hidden="true" href="#数据管理">#</a></h2>
+<h3 id="元数据管理">元数据管理<a hidden class="anchor" aria-hidden="true" href="#元数据管理">#</a></h3>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/57823028">从元数据到元数据管理，这篇文章彻底讲清楚了 - 知乎</a></li>
+</ul>
+<h4 id="元模型管理">元模型管理<a hidden class="anchor" aria-hidden="true" href="#元模型管理">#</a></h4>
+<ul>
+<li>元模型维护：增删改发布</li>
+<li>元模型统计：分类、使用情况、变更追溯</li>
+<li>元模型生命周期管理</li>
+</ul>
+<h4 id="元数据管理">元数据管理<a hidden class="anchor" aria-hidden="true" href="#元数据管理">#</a></h4>
+<ul>
+<li>元数据的维护：增删改</li>
+<li>元数据关系的维护：建立，删除，跟踪</li>
+<li>元数据生命周期管理：管理、跟踪元数据的整个生命周期</li>
+</ul>
+<h4 id="元数据分析">元数据分析<a hidden class="anchor" aria-hidden="true" href="#元数据分析">#</a></h4>
+<p>包括血缘分析（血统分析）、影响分析、实体关联分析、实体影响分析、主机拓扑分析、指标一致性分析等。</p>
+<h3 id="主数据管理mdm">主数据管理MDM<a hidden class="anchor" aria-hidden="true" href="#主数据管理mdm">#</a></h3>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/31039623">主数据管理(Master Data Management)基础 - 知乎</a></li>
+<li>通过技术，创建和维护一个可靠的，可持续的，精确的，安全的数据环境，形成一个一致的主数据视图。</li>
+<li>信息孤岛的原因：应用程序为支持某个系统而设计的，它们拥有自己的信息技术设施，包括应用相关的数据存储和定义。</li>
+<li>问题：主数据依赖于应用，随着数量的增多，通过点对点连接的方式同步数据，会变得更加复杂</li>
+<li>解决：建立一个信息集成、管理和共享的系统化解决方案，MDM。</li>
+<li>分类
+<ul>
+<li>单个主题域
+<ul>
+<li>Product Information Management</li>
+<li>Customer Information Management</li>
+</ul>
+</li>
+<li>多主题域</li>
+</ul>
+</li>
+</ul>
+<h3 id="mdm系统">MDM系统<a hidden class="anchor" aria-hidden="true" href="#mdm系统">#</a></h3>
+<ul>
+<li>MDM的技术基础</li>
+<li>支持多种主数据类型，且这些类型与行业无关</li>
+<li>使用方法
+<ul>
+<li>CollaborativeAuthoring(协同型)</li>
+<li>Operational（操作型）</li>
+<li>Analytical（分析型）</li>
+</ul>
+</li>
+<li>实现风格
+<ul>
+<li>Consolidation Implementation Style(合并风格)</li>
+<li>Registry Implementation Style(登记风格)</li>
+<li>Coexistence Implementation Style(共存风格)</li>
+<li>Transactional Hub Implementation Style(事务HUB风格)</li>
+</ul>
+</li>
+<li>关键功能
+<ul>
+<li>Master Data Lifecycle Management（Master Data 生命周期管理）</li>
+<li>Data Quality Management（数据质量管理）</li>
+<li>Master Data Harmonization（Master Data 协调和统一）</li>
+<li>Analysis and InsightCapabilities（分析功能）</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据管理框架">数据管理框架<a hidden class="anchor" aria-hidden="true" href="#数据管理框架">#</a></h3>
+<h4 id="dcmm">DCMM<a hidden class="anchor" aria-hidden="true" href="#dcmm">#</a></h4>
+<ul>
+<li>Data management capability maturity assessment model 数据管理能力成熟度评估模型</li>
+<li>DCMM模型是一个整合了标准规范、管理方法论、评估模型等多方面内容的综合框架</li>
+<li>组织内部数据能力的八个组成
+<ul>
+<li>数据战略：数据战略规划、实施、评估</li>
+<li>数据治理：数据治理的组织、建设、沟通</li>
+<li>数据架构：数据模型、数据分布、数据集成与共享、元数据管理</li>
+<li>数据应用：数据分析、数据开放共享、数据服务</li>
+<li>数据安全：数据安全策略、管理、审计</li>
+<li>数据质量管理：数据质量管理需求、检查、分析、提升</li>
+<li>数据标准：业务数据、参考数据和主数据、数据元、指标数据</li>
+<li>数据生命周期：数据需求、数据设计和开放、数据运维、数据退役</li>
+</ul>
+</li>
+<li>数据成为五大生产要素之一
+<ul>
+<li>2020年4月9日，《中共中央国务院关于构建更加完善的要素市场化配置体制机制的意见》中首次将“数据”与土地、劳动力、资本、技术并列为五大生产要素</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>数据架构</p>
+<ul>
+<li>定义数据需求、指导对数据资产的整合和控制、使数据投资与业务战略相匹配的一 套整体构件规范</li>
+<li>数据模型：定义与规范业务经营、管理和决策活动需要的组织数据需求</li>
+<li>数据分布：确定各类数据资产在组织内部的合理部署</li>
+<li>数据集成与共享：实现组织的各类数据资产在组织内整合在一起</li>
+<li>元数据管理：关于元数据的创建、存储、整合与控制等一整套流程集合</li>
+</ul>
+</li>
+</ul>
+<h4 id="dama">DAMA<a hidden class="anchor" aria-hidden="true" href="#dama">#</a></h4>
+<ul>
+<li>Data Management Association 国际数据管理协会</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>年会</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>知识体系</p>
+<ul>
+<li>DAMA-BOK2.0</li>
+<li>《DAMA 数据管理字典》</li>
+<li>《DAMA数据管理知识体系》</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>DMBOK认证考试</p>
+<ul>
+<li>中文：
+<ul>
+<li>GDGA（数据治理工程师）</li>
+<li>CDGP（数据治理专家）</li>
+</ul>
+</li>
+<li>英文：CDMP（Certified Data Management Professional）</li>
+</ul>
+</li>
+</ul>
+<h4 id="战略一致性模型">战略一致性模型<a hidden class="anchor" aria-hidden="true" href="#战略一致性模型">#</a></h4>
+<p>战略一致性模型 抽象了各种数据管理方法的基本驱动因素。
+模型的中心是数据和信息之间的关系。
+信息通常与业务战略和数据的操作使用相关。
+数据与信息技术和流程相关联，这些技术和过程支持可访问数据的物理系统。</p>
+<h4 id="dama-dmbok框架">DAMA-DMBOK框架<a hidden class="anchor" aria-hidden="true" href="#dama-dmbok框架">#</a></h4>
+<ul>
+<li>Data Management Body of Knowledge 数据管理知识体系指南</li>
+<li>数据控制：在数据管理和使用层面之上进行规划、监督和控制。</li>
+<li>数据架构管理：定义数据资产管理蓝图。</li>
+<li>数据开发：数据的分析、设计、实施、测试、部署、维护等工作。</li>
+<li>数据操作管理：提供从数据获取到清除的技术支持。</li>
+<li>数据安全管理：确保隐私、保密性和适当的访问权限等。</li>
+<li>数据质量管理：定义、监测和提高数据质量。</li>
+<li><a href="https://www.51cto.com/article/626349.html">参考数据和主数据管理</a>：管理数据的黄金版本和副本。</li>
+<li>数据仓库和商务智能管理：实现报告和分析。</li>
+<li>文件和内容管理：管理数据库以外的数据</li>
+<li>元数据管理：元数据的整合、控制以及提供元数据。</li>
+</ul>
+<h4 id="434数据管理框架">434数据管理框架<a hidden class="anchor" aria-hidden="true" href="#434数据管理框架">#</a></h4>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>数据治理</p>
+<ul>
+<li>保障数据管理活动顺利开展的控制活动</li>
+<li>管理的管理</li>
+<li>保障措施</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>数据管理</p>
+<ul>
+<li>数据价值创造过程中三项数据管理活动
+<ul>
+<li>数据生成：数据架构管理</li>
+<li>数据处理：数据生存周期管理</li>
+<li>数据消费：数据应用管理</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>基础数据管理</p>
+<ul>
+<li>贯穿数据价值创造过程的四项基础数据管理活动
+<ul>
+<li>数据质量管理</li>
+<li>数据安全管理</li>
+<li>数据标准管理</li>
+<li>主数据和参考数据管理</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据治理">数据治理<a hidden class="anchor" aria-hidden="true" href="#数据治理">#</a></h2>
+<ul>
+<li><a href="http://blog.itpub.net/31562043/viewspace-2675935/">数据治理之元数据管理实践_ITPUB博客</a></li>
+<li><a href="http://www.woshipm.com/data-analysis/3586383.html">谈谈数据治理：怎么做元数据管理？ | 人人都是产品经理</a></li>
+<li><a href="https://www.163.com/dy/article/FVRBTOHG05313BIN.html">数据治理项目中怎么做元数据管理？|数据源|视图_网易订阅</a></li>
+<li><a href="https://www.datablau.cn/industry/92.html">数据治理之元数据管理，有哪些高效玩法_北京数语科技有限公司</a></li>
+<li>工具：<a href="https://new.qq.com/rain/a/20210525A081S900">16款数据治理工具和软件，总有一款适合你_腾讯新闻</a></li>
+<li><a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1650556806&amp;ver=3752&amp;signature=CVu0AyrVTeUbw60HV9ZJAxk7p24HA1LZyfEPy05kRMicTuVhmM1fe*OmSTw5fLreWVWzyYmC*Ih9Rpk3FR4yy1JY39inCDaWzOgl3PBmaWob-unhlTwG5*e2hiyQrN8R&amp;new=1">数据治理平台功能架构规划</a></li>
+</ul>
+<h3 id="定义">定义<a hidden class="anchor" aria-hidden="true" href="#定义">#</a></h3>
+<ul>
+<li><a href="https://www.sohu.com/a/461817749_100097948">一文搞懂数据治理、数据管理、数据资产管理有什么不同_控制</a></li>
+<li>数据资产是对数据资源的量化和资产化</li>
+<li>数据治理是针对数据管理的质量控制规范
+<ul>
+<li>以企业资产的形式对数据进行优化、保护和利用的决策权利</li>
+<li>对组织内人员、流程、技术和策略的编排，以从数据中获取最优价值</li>
+</ul>
+</li>
+</ul>
+<h3 id="目标">目标<a hidden class="anchor" aria-hidden="true" href="#目标">#</a></h3>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/423105201">一文读懂数据治理和数据中台的关系 - 知乎</a></li>
+<li><a href="https://shimo.im/docs/hXqGHjTkC3JYPJpJ/read">数字化转型、中台、数据治理资料合集下载</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/377800786">数据管理、数据治理、数据中心、数据中台、数据湖、数据资产等的关系与区别？ - 知乎</a></li>
+<li>促进数据价值的释放</li>
+<li>让数据更好用</li>
+<li>数据治理建设和应用的前提
+<ul>
+<li>保密性</li>
+<li>完整性</li>
+<li>可用性</li>
+</ul>
+</li>
+<li>数据生命周期
+<ul>
+<li>采集</li>
+<li>传输</li>
+<li>存储</li>
+<li>共享</li>
+<li>使用</li>
+<li>销毁</li>
+</ul>
+</li>
+<li>建立对数据承载业务的理解</li>
+<li>完整的企业数据资产地图</li>
+</ul>
+<h4 id="具体做法">具体做法<a hidden class="anchor" aria-hidden="true" href="#具体做法">#</a></h4>
+<ul>
+<li>消除数据孤岛，增大数据体量，避免重复开发，为后续数据互通与数据分析，提供数据原材料</li>
+<li>提高数据质量，推进数据标准化，为数据流动创造条件，给后续任务提供有用的数据</li>
+<li>保障数据安全的共享和应用。</li>
+<li></li>
+</ul>
+<h3 id="步骤">步骤<a hidden class="anchor" aria-hidden="true" href="#步骤">#</a></h3>
+<ul>
+<li>找症状，明确目标
+<ul>
+<li>输入企业战略规划</li>
+<li>输出数据治理初步沟通方案</li>
+</ul>
+</li>
+<li>理数据，现状分析
+<ul>
+<li>需求，现状调研表</li>
+<li>问题列表</li>
+</ul>
+</li>
+<li>数据治理成熟度评估</li>
+<li>数据质量问题归因</li>
+<li>业务影响及实施优先级评估</li>
+<li>制定数据治理行动路线和计划</li>
+</ul>
+<h2 id="业务">业务<a hidden class="anchor" aria-hidden="true" href="#业务">#</a></h2>
+<h3 id="岗位认知">岗位认知<a hidden class="anchor" aria-hidden="true" href="#岗位认知">#</a></h3>
+<h4 id="其他公司工作要求">其他公司工作要求<a hidden class="anchor" aria-hidden="true" href="#其他公司工作要求">#</a></h4>
+<ul>
+<li><a href="https://www.zhipin.com/job_detail/57d7b334a31e8c5c1XRz09i5E1FR.html?ka=seo-search-word-job0_blank&amp;lid=undefined&amp;securityId=undefined">「数据治理工程师招聘」_华为技术有限公司招聘-BOSS直聘</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/262569984">腾讯看点数据治理工程师 - 知乎</a></li>
+</ul>
+<h4 id="政务大数据中心资源池建设">政务大数据中心资源池建设<a hidden class="anchor" aria-hidden="true" href="#政务大数据中心资源池建设">#</a></h4>
+<ul>
+<li><a href="https://blog.csdn.net/hgstclyh/article/details/115658615">(18条消息) 政务数据里的基础库、主题库、专题库_Leo笑的博客-CSDN博客_主题库</a></li>
+<li><a href="https://www.digitalgd.com.cn/technology/platform/dataCenter/">政务大数据中心 - 数字广东官网</a></li>
+<li>硬
+<ul>
+<li>基础库，主题库（如出行），专题库（如某事件，活动）的建设
+<ul>
+<li>表现形式上以sql库为主，其实都是数据库表按一定规则组织到一起。</li>
+<li>都是数据仓库. 建模</li>
+</ul>
+</li>
+<li>质量管理</li>
+<li>对各应用系统的数据采集.ETL</li>
+</ul>
+</li>
+<li>软
+<ul>
+<li>对以上三项工作相关的，规章制度，工作流程，管理方案的制定</li>
+</ul>
+</li>
+</ul>
+<h4 id="岗位工作内容">岗位工作内容<a hidden class="anchor" aria-hidden="true" href="#岗位工作内容">#</a></h4>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>文档</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>体系规划</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>规范标准</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>数据需求项目的解决方案</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>开发</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>ETL数据开发</p>
+<ul>
+<li>目的是整合企业中分散、零乱、标准不统一的数据</li>
+<li>负责分布的、异构数据源中的数据，抽取到临时中间层（ODS）进行清洗，转换，集成，最后加载到数据仓库或数据集市</li>
+<li>工作在临时中间层，承前启后的重要一环，使用ETL工具</li>
+<li>工作面临的问题
+<ul>
+<li>数据来源于不同主机，SQL语句吃力</li>
+<li>统一格式，代码吃力</li>
+<li>处理数据，存储过程吃力</li>
+</ul>
+</li>
+<li>ETL工具优点
+<ul>
+<li>支持多种异构数据源连接</li>
+<li>图形化界面操作方便</li>
+<li>海量数据处理速度快，流程清洗</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>ETL工具</p>
+<ul>
+<li>kettle非实时</li>
+<li>informatica实时，但是基于时间戳</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>项目经验</p>
+<ul>
+<li>生产库到数据仓库的多表同步，kettle可以用一个程序搞定，informatica工具批量设计，但还是需要生成多个程序进行一一配置</li>
+<li>增量表，每次运行后需要把最新一条数据的操作时间存到数据库中，下次运行就读取大于该时间的数据。
+<ul>
+<li>kettle有控件可以时间保存为变量</li>
+<li>informatica读取时间到文件，再以文件为参数文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>实时流数据处理和云计算技术</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>OLTP</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>OLAP</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>业务数据支持</li>
+</ul>
+</li>
+</ul>
+<h3 id="工作内容">工作内容<a hidden class="anchor" aria-hidden="true" href="#工作内容">#</a></h3>
+<h4 id="政务大数据中心资源池建设">政务大数据中心资源池建设<a hidden class="anchor" aria-hidden="true" href="#政务大数据中心资源池建设">#</a></h4>
+<ul>
+<li>数据调研</li>
+<li>数据模型设计</li>
+<li>加工逻辑分析</li>
+<li>脚本开发测试</li>
+</ul>
+<h4 id="质量管理">质量管理<a hidden class="anchor" aria-hidden="true" href="#质量管理">#</a></h4>
+<ul>
+<li>制定质量核验规则</li>
+<li>支撑协调解决，数据管理和开发利用中的数据质量问题</li>
+</ul>
+<h4 id="数据交换过程设计与实施">数据交换过程设计与实施<a hidden class="anchor" aria-hidden="true" href="#数据交换过程设计与实施">#</a></h4>
+<ul>
+<li><a href="https://cloud.tencent.com/developer/article/1646387">数据交换过程详解 - 云+社区 - 腾讯云</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>数据交换的目的</p>
+<ul>
+<li>数据是在流动、应用中创造价值的</li>
+<li>解决数据孤岛问题</li>
+<li>调和：在交换过程中，阻碍数据流动与共享的，不同数据内容、数据格式和数据质量。</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>数据交换面临问题</p>
+<ul>
+<li>内容繁多，难以全面掌握</li>
+<li>数据流转和逻辑过程复杂，难以追溯数据来源</li>
+<li>数据结构和质量无法管控</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>数据交换面临挑战（努力方向）</p>
+<ul>
+<li>单表数据交换效率低：整库数据交换</li>
+<li>手工编写交换模型效率低：自动化批量模型生成</li>
+<li>实时数据同步需额外操作：实时数据通道</li>
+<li>PB级交换效率低：分段并行交换</li>
+<li>数据交换的复用性低：通过业务模板创建模型</li>
+<li>手工脚本脱敏效率低：数据自动脱敏</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>开发交换程序</p>
+<ul>
+<li>开发数据交换模型</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>数据交换的数据标准</p>
+<ul>
+<li>数据未动，标准先行</li>
+<li>保证数据供应方和数据消费方对同一业务信息的定义和理解趋于一致</li>
+<li>做法：提供可配置功能，按照标准对数据供应方的数据进行转换</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>自动采集元数据</p>
+<ul>
+<li>数据交换的本质是基于元数据的交换</li>
+<li>目标：提供数据资源的全面指南</li>
+<li>元数据：定义了数据交换中的数据模式、来源及抽取转换规则</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>把控数据分布</p>
+<ul>
+<li>完成部门核心职能的业务梳理及对应的信息资源梳理</li>
+<li>编制信息资源目录，有什么，在哪里</li>
+<li>建立信息资源的共享机制和管理制度</li>
+<li>结合企业数据现状和业务属性，形成企业数据标准的业务属性和技术属性</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>应用系统的数据采集和任务配置</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>数据交换方式方法</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>不同类型数据的交换方式</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>实时数据交换</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>数据驱动的交换</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>指定周期的交换</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>事件驱动的交换</li>
+</ul>
+</li>
+</ul>
+<h4 id="数据治理方案制定">数据治理方案制定<a hidden class="anchor" aria-hidden="true" href="#数据治理方案制定">#</a></h4>
+<!-- raw HTML omitted -->
+<ul>
+<li>元数据管理</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>数据元管理</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>数据质量管理</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>数据架构设计</li>
+</ul>
+<h2 id="技术">技术<a hidden class="anchor" aria-hidden="true" href="#技术">#</a></h2>
+<h3 id="数据仓库">数据仓库<a hidden class="anchor" aria-hidden="true" href="#数据仓库">#</a></h3>
+<h4 id="定义与特点">定义与特点<a hidden class="anchor" aria-hidden="true" href="#定义与特点">#</a></h4>
+<ul>
+<li>应用场景：面向决策和分析的数据处理。而数据库是面向生产业务的。</li>
+<li>构成：数据仓库就是对不同应用系统中的多个异构数据源的有效集成。里面的数据按照主题进行重组，还包含历史数据，存放在数据仓库里的内容一般不会更新。</li>
+<li>特点：面向主题的，集成的，相对稳定的，反映历史变化的</li>
+<li>数据仓库本身既不生产数据也不消费数据，只是作为一个中间平台集成化地存储数据；</li>
+<li>数据仓库实现的难度：在于整体架构的构建及ETL的设计</li>
+<li>价值意义：数据应用</li>
+</ul>
+<h4 id="基本架构">基本架构<a hidden class="anchor" aria-hidden="true" href="#基本架构">#</a></h4>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>数据仓库里的数据</p>
+<ul>
+<li>细节数据</li>
+<li>聚合数据</li>
+<li>多维数据</li>
+<li>分析数据</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>数据来源</p>
+<ul>
+<li><a href="http://webdataanalysis.net/web-data-warehouse/data-warehouse-source-data/">数据仓库的源数据类型 | 网站数据分析</a></li>
+<li>对于网站数据仓库而言，点击流日志是一块主要的数据来源，它是网站分析的基础数据；</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>数据处理</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>数据存储</p>
+<ul>
+<li>数据仓库并不需要储存所有的原始数据，但数据仓库需要储存细节数据，并且导入的数据必须经过整理和转换使其面向主题。</li>
+<li>知道用户的省份、城市足够，至于用户究竟住哪里可能只是物流商关心的事</li>
+<li>细节数据是必需的，因为数据仓库的分析需求会时刻变化</li>
+<li>面向主题是数据仓库的第一特性</li>
+<li>整理成面向主题的组织形式才是真正地利于分析
+<ul>
+<li>点击流日志整理成页面（Page）、访问（Visit或Session）、用户（Visitor）三个主题</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>数据的聚合</p>
+<p>这里的聚合数据指的是基于特定需求的简单聚合（基于多维数据的聚合体现在多维数据模型中），简单聚合可以是网站的总Pageviews、Visits、Unique Visitors等汇总数据，也可以是Avg. time on page、Avg. time on site等平均数据，这些数据可以直接地展示于报表上。</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>多维数据模型</p>
+<ul>
+<li>提供了多角度多层次的分析应用，比如基于时间维、地域维等构建的销售星形模型、雪花模型，可以实现在各时间维度和地域维度的交叉查询，以及基于时间维和地域维的细分。</li>
+<li>所以多维数据模型的应用一般都是基于联机分析处理（Online Analytical Process, OLAP）的，而面向特定需求群体的数据集市也会基于多维数据模型进行构建。</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>业务模型</p>
+<p>基于某些数据分析和决策支持而建立起来的数据模型，比如我之前介绍过的用户评价模型、关联推荐模型、RFM分析模型等，或者是决策支持的线性规划模型、库存模型等；同时，数据挖掘中前期数据的处理也可以在这里完成。</p>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>数据访问</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>数据应用</p>
+<ul>
+<li><a href="http://webdataanalysis.net/web-data-warehouse/value-of-data-warehouse/">数据仓库的价值 | 网站数据分析</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>报表展示</p>
+<ul>
+<li>将聚合数据和多维分析数据展示到报表，提供了最为简单和直观的数据</li>
+<li>理论上将数据仓库中的所有数据都开放即席查询，用户可以根据自己需要查询获取数据，并提供导出到外部Excel的功能</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>即席查询（Ad Hoc）</p>
+<ul>
+<li>即席：当场。即席查询，当场去查询</li>
+<li>用户根据自己的需求，灵活选择查询条件，系统根据用户选择，生成相应的统计报表。</li>
+<li>与普通应用查询的区别：普通应用查询是定制开发的，即席查询是用户自定义查询条件的，临时产生的
+<ul>
+<li>普通查询可以通过建立索引、分区等技术来优化这些查询，使这些查询的效率很高。</li>
+<li>即席查询是用户在使用时临时生产的，是一种松散类型的命令/查询，其值取决于某个变量，每次执行命令时，结果都不同，这取决于变量的值。</li>
+</ul>
+</li>
+<li><a href="https://developer.aliyun.com/article/745881">数据库必知词汇：即席查询(Ad Hoc)-阿里云开发者社区</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>数据分析</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>数据挖掘</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>元数据管理</p>
+<ul>
+<li>元数据：解释性数据，用于记录数据仓库中模型的定义，各层级间的映射关系；监控数据仓库的数据状态及ETL的任务运行状态</li>
+<li>元数据资料库：统一存储和管理元数据</li>
+<li>目的：使数据仓库的设计、部署、操作和管理达成协同与一致</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>数据诊断</li>
+</ul>
+</li>
+</ul>
+<h4 id="数据分层">数据分层<a hidden class="anchor" aria-hidden="true" href="#数据分层">#</a></h4>
+<ul>
+<li><a href="https://juejin.cn/post/6969874734355841031">详解数仓中的数据分层：ODS、DWD、DWM、DWS、ADS - 掘金</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>意义</p>
+<ul>
+<li>清晰数据结构：每一个数据分层都有它的作用域和职责，在使用表的时候能更方便地定位和理解</li>
+<li>减少重复开发：规范数据分层，开发一些通用的中间层数据，能够减少极大的重复计算</li>
+<li>统一数据口径：通过数据分层，提供统一的数据出口，统一对外输出的数据口径</li>
+<li>复杂问题简单化：将一个复杂的任务分解成多个步骤来完成，每一层解决特定的问题</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>数据源</p>
+<ul>
+<li>操作数据库</li>
+<li>ERP</li>
+<li>External Source</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>ETL</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>数据运营层</p>
+<ul>
+<li>ETL之后装入</li>
+<li>ODS Operational Data Store</li>
+<li>本层的数据，总体上大多是按照源头业务系统的分类方式而分类的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>ODS贴源层</p>
+<ul>
+<li>ODS Operational Data Store 操作数据准备区</li>
+<li>ETL之后装入本层，一般不做过多清洗，原封不动接入</li>
+<li>本层的数据，总体上大多是按照源头业务系统的分类方式而分类的</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>DWD数据细节层</p>
+<p>数据细节层：data warehouse details，DWD
+也称为ODS业务层和数据仓库的隔离层，保持和ODS相同的颗粒度
+进行数据处理和规范操作：去空、脏数据，离群值
+为了提高数据明细层的易用性，该层通常会才采用一些<a href="https://blog.51cto.com/u_15278282/3021660">维度退化</a>方法，将维度退化至事实表中，减少事实表和维表的关联。</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>DWB基础数据层（有的没有）</p>
+<ul>
+<li>存储客观数据，一般用作中间层</li>
+<li>（可以帮DWM完成）在DWD的数据基础上，对数据做轻度的聚合操作，生成一系列的中间表，提升公共指标的复用性，减少重复加工</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>DWM数据中间层</p>
+<p>数据中间层：Data Warehouse Middle，DWM；
+该层是在DWD层的数据基础上，对数据做一些轻微的聚合操作，生成一些列的中间结果表，提升公共指标的复用性，减少重复加工的工作。
+简答来说，对通用的核心维度进行聚合操作，算出相应的统计指标</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>DWS数据服务层</p>
+<ul>
+<li>该层的数据表会相对比较少，一张表会涵盖比较多的业务内容</li>
+<li>由于其字段较多，因此一般也会称该层的表为宽表</li>
+<li>基于DWB上的基础数据、整合汇总某一主题，又称为数据集市或宽表</li>
+<li>按照业务划分，如流量、订单、用户等，生成字段比较多的宽表</li>
+<li>用于提供后续业务查询，OLAP分析，数据分发</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>ADS数据应用层</p>
+<p>数据应用层：Application Data Service，ADS；</p>
+<ul>
+<li>该层主要是提供给数据产品和数据分析使用的数据</li>
+<li>一般会存放在ES、Redis、PostgreSql等系统中供线上系统使用</li>
+<li>也可能存放在hive或者Druid中，供数据分析和数据挖掘使用，比如常用的数据报表就是存在这里的。</li>
+<li>OLAP前端</li>
+<li>Web</li>
+<li>APP</li>
+</ul>
+</li>
+</ul>
+<h4 id="建模方式">建模方式<a hidden class="anchor" aria-hidden="true" href="#建模方式">#</a></h4>
+<ul>
+<li><a href="https://www.163.com/dy/article/GOAA4F840511805E.html">三范式建模和维度建模，到底该选哪一个？|数据仓库|数据源_网易订阅</a></li>
+<li><a href="https://bbs.huaweicloud.com/blogs/282233">一篇文章搞懂数据仓库：三范式与反范式-云社区-华为云</a></li>
+<li>数据仓库不更新，所以可以反范式，提高效率而不出错</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>第三范式模型</p>
+<ul>
+<li>不能存在传递依赖</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>多维数据模型(维度建模)</p>
+<ul>
+<li>数据模型
+<ul>
+<li>范式模型（二维表）</li>
+<li>多维数据模型
+<ul>
+<li>模式（种类）
+<ul>
+<li>星型</li>
+<li>雪花型</li>
+<li>星座型</li>
+</ul>
+</li>
+<li>实现
+<ul>
+<li>ROLAP</li>
+<li>MOLAP</li>
+<li>HOLAP</li>
+</ul>
+</li>
+<li>存储
+<ul>
+<li>按行</li>
+<li>按列（数组）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>概念</p>
+<ul>
+<li>数据立方体</li>
+<li>维：属性集合构成一个维度：时间维，空间维</li>
+<li>维的层次：维的粒度。例如时间维：日期，月份，季度，年</li>
+<li>维的成员：维的取值，数据项在某维中位置的描述。（2022年4月1日是在日期维上位置的描述）</li>
+<li>度量：多维数组的一个取值。</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>多维分析的操作</p>
+<ul>
+<li><a href="https://cloud.tencent.com/developer/article/1558188">数据仓库与数据挖掘-多维数据操作 - 云+社区 - 腾讯云</a></li>
+<li>钻取：改变维的层次，变换分析的粒度。
+<ul>
+<li>向上钻取/上卷：抽象，减少维数。确诊，无症状，境外，本土-&gt;感染
+<ul>
+<li>(例如，从周到季度，再到年度)。</li>
+</ul>
+</li>
+<li>向下钻取：具体化。如时间更具体</li>
+</ul>
+</li>
+<li>切片：一部分维度上选定值，度量数据在剩余维上的分布，剩余维只有两个，一片就是二维
+<ul>
+<li>在某两个维上取一定区间的维成员或全部维成员，而在其余的维上选定一个维成员的操作。</li>
+</ul>
+</li>
+<li>切块：剩余维有三个或以上</li>
+<li>旋转：改变展示方向，对应SQL语句里，就是改变SELECT后面字段的顺序。</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>广义的功能</p>
+<ul>
+<li>广义上，任何能够有助于辅助用户理解数据的技术或者操作都可以作为OLAP功能</li>
+<li>基本代理操作
+<ul>
+<li>当系统处于某种特殊状态时提醒分析员
+<ul>
+<li>示警报告：定义一些条件，一旦条件满足，系统会提醒分析员去做分析。如每日报告完成或月订货完成等通知分析员作分析。</li>
+<li>时间报告：按日历和时钟提醒分析员。</li>
+<li>异常报告：当超出边界条件时提醒分析员。如销售情况已超出预定义阈值的上限或下限时提醒分析员。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>计算能力</li>
+<li>模型计算
+<ul>
+<li>增加系统优化，统计分析，趋势分析等模型，以提高决策分析能力</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>优缺点</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>优点</p>
+<ul>
+<li>基于分析优化的数据组织和存储模式</li>
+<li>电子商务网站的操作数据库中记录的可能是某个时间点，某个用户购买了某个商品，并寄送到某个具体的地址的这种记录的集合，于是我们无法马上获取2010年的7月份到底有多少用户购买了商品，或者2010年的7月份有多少的浙江省用户购买了商品？</li>
+</ul>
+<p>但是在基于多维模型的基础上，此类查询就变得简单了，只要在时间维上将数据聚合到2010年的7月份，同时在地域维上将数据聚合到浙江省的粒度就可以实现，这个就是OLAP的概念。</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>缺点</p>
+<ul>
+<li>多维模型的缺点就是与关系模型相比其灵活性不够，一旦模型构建就很难进行更改。</li>
+<li>订单的事实（事实表）
+<ul>
+<li>维度编码：时间、用户维</li>
+<li>事实数据：商品数量、总价等度量（主题）</li>
+</ul>
+</li>
+<li>新需求：区分订单中包含了哪些商品
+<ul>
+<li>解决方法
+<ul>
+<li>关系模型：只需要另外再建一张表记录订单号和商品的对应关系即可</li>
+<li>多维模型：无法再建一个新的维度，产品维，只能再建一个以产品为主题的事实</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>根据需求首先详细的设计模型，应该包含哪些维和度量，应该让数据保持在哪个粒度上才能满足用户的分析需求</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>模式</p>
+<ul>
+<li>按照事实表和维表来构建数据仓库</li>
+<li><a href="https://img-blog.csdnimg.cn/20190406231013304.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1cnJhc3M=,size_16,color_FFFFFF,t_70">星型模型（Star-schema）</a>
+<ul>
+<li>擅长：OLTP-&gt;DW</li>
+<li>星型模式之所以广泛被使用，在于针对各个维作了大量的预处理，如按照维进行预先的统计、分类、排序等。</li>
+<li>维度建模的领域主要适用于数据集市层，它的最大的作用其实是为了解决数据仓库建模中的性能问题。</li>
+</ul>
+</li>
+<li>特别是针对 3NF 的建模方法，星型模式在性能上占据明显的优势。</li>
+<li><a href="https://pic3.zhimg.com/80/v2-fcb612793eadb680a5f35b8f23b9ff7a_720w.jpg">雪花模型</a>：当有一个或多个维表没有直接连接到事实表上，而是通过其他维表连接到事实表上
+<ul>
+<li>擅长：DW-&gt;OLAP环节</li>
+</ul>
+</li>
+<li>维度建模很难能够提供一个完整地描述真实业务实体之间的复杂关系的抽象方法。</li>
+<li>星座模型：多张事实表，共享维度信息</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>星型和雪花型对比
+<table>
+<thead>
+<tr>
+<th>对比内容</th>
+<th>星型</th>
+<th>雪花型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模型复杂度</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>层次结构</td>
+<td></td>
+<td>贴近OLTP</td>
+</tr>
+<tr>
+<td>存储角度</td>
+<td>产生冗余数据</td>
+<td>不会产生冗余</td>
+</tr>
+<tr>
+<td>擅长</td>
+<td>DW-OLAP环节</td>
+<td>OLTP-DW环节</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>事实表和维度表</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/145224432">事实表与维度表 - 知乎</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>事实表</p>
+<ul>
+<li>事实表：表格里存储了能体现实际数据或详细数值，一般由维度编码和事实数据组成</li>
+<li>事实表是指存储有事实记录的表，比如系统日志、销售记录等。事实表的记录在不断地增长，比如电商的商品订单表，就是类似的情况，所以事实表的体积通常是远大于其他表。</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>维度表</p>
+<ul>
+<li>一般固定、变动少、数据有限、冗余大，为事实表节省空间；主键选择整数值，节省事实表的空间（如：联系人、物品种类）</li>
+<li>维度表：表格里存放了具有独立属性和层次结构的数据，一般由维度编码和对应的维度说明(标签)</li>
+<li>一个数据（或度量？主题？），可以属于不同维度，在不同维度上根据层次结构进行汇总统计(聚合)</li>
+<li>维表，有时也称查找表（Lookup Table），是与事实表相对应的一种表；它保存了维度的属性值，可以跟事实表做关联，相当于将事实表上经常重复出现的属性抽取、规范出来用一张表进行管理。</li>
+<li>高基数维度数据：一般是用户资料表、商品资料表类似的资料表，数据量可能是千万级或者上亿级别。</li>
+<li>低基数维度数据：一般是配置表，比如枚举字段对应的中文含义，或者日期维表等；数据量可能就是个位数或者几千几万。</li>
+<li>常见的维度表有：日期表（存储与日期对应的周、月、季度等的属性）、地点表（包含国家、省／州、城市等属性）等。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>OLAP三种基本实现结构</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>ROLAP关系型</p>
+<ul>
+<li>将分析用的多维数据存储在关系数据库中</li>
+<li>将应用频率较高的查询作为实视图</li>
+<li>以关系数据库为核心，以关系型结构进行多维数据的表示和存储。OLAP中间件实现其余的服务，这种技术有很大的伸缩性，但是关联操作使得响应效率降低。</li>
+<li>由于ROLAP是用关系表来模拟多维数据的，因此其存取较MOLAP复杂。</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>RDBMS针对OLAP的优化</p>
+<ul>
+<li>并行存储</li>
+<li>并行查询</li>
+<li>并行数据管理</li>
+<li>基于成本的查询优化</li>
+<li>位图索引</li>
+<li>SQL的OLAP扩展（cube，rollup）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>MOLAP多维型</p>
+<ul>
+<li>将用到的多维数据物理上存储为多维数组的形式</li>
+<li>通过基于数组的多维存储引擎，将数据映射到数据立方体数组结构中，实现数据的多维视图。这种技术的优点是数据的快速索引，缺点是数据集是稀疏的，存储利用率低。</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>HOLAP混合型</p>
+<p>将ROLAP的较大可伸缩性和MOLAP的快速计算紧密结合，实现数据的有效存储和快速检索。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>实体建模法</p>
+<ul>
+<li>事实：小明开车去上学</li>
+<li>实体：小明，学校</li>
+<li>事件：上学</li>
+<li>说明：开车去</li>
+<li>由于实体说明法只是一种抽象客观世界的方法，因此，注定了该建模方法只能局限在业务建模和领域概念建模阶段。</li>
+</ul>
+</li>
+</ul>
+<h4 id="oltp与olap对比">OLTP与OLAP对比<a hidden class="anchor" aria-hidden="true" href="#oltp与olap对比">#</a></h4>
+<ul>
+<li>目的：为了操作数据；为了分析数据</li>
+<li>数据库操作：增删改；查</li>
+<li>优化方式：主码索引和散列；多维视图的操作</li>
+<li>用途：存储当前交易数据；存储历史数据</li>
+<li>面向：事务处理；面向主题</li>
+<li>数据来源：日常业务；数据库或文件</li>
+<li>设计：三范式（利于插入）；星型（利于查询）</li>
+</ul>
+<h3 id="数据库">数据库<a hidden class="anchor" aria-hidden="true" href="#数据库">#</a></h3>
+<h4 id="范式">范式<a hidden class="anchor" aria-hidden="true" href="#范式">#</a></h4>
+<ul>
+<li><a href="https://blog.csdn.net/Dove_Knowledge/article/details/71434960">(18条消息) 数据库-第一范式、第二范式、第三范式、BC范式、第四范式简析_Yes_JiangShuai的博客-CSDN博客_bc范式</a></li>
+<li><a href="https://blog.csdn.net/u013630349/article/details/50724244">(18条消息) 数据库 之 理解 超键、候选键、主键、主属性、外键_稚枭天卓的博客-CSDN博客_主属性和主键的区别</a></li>
+<li>第一范式：属性原子性</li>
+<li>第二范式：非主键完全依赖于主键</li>
+<li>第三范式：非主键不传递依赖于主键</li>
+<li>BC范式：所有键，包括主键，都不传递依赖
+<ul>
+<li>数量依赖仓库号+物品号，仓库号依赖于管理员号，管理员号依赖于仓库号</li>
+</ul>
+</li>
+</ul>
+<h4 id="数据库建模">数据库建模<a hidden class="anchor" aria-hidden="true" href="#数据库建模">#</a></h4>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>步骤</p>
+<ul>
+<li><a href="https://blog.csdn.net/Eason_oracle/article/details/52667628">数据库建模三步骤：概念模型-&gt;逻辑模型-&gt;物理模型</a></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>工具</p>
+<ul>
+<li><a href="http://blog.itpub.net/31556440/viewspace-2657784/">盘点丨12款数据库建模工具特点，总有一款适合你！_ITPUB博客</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>powerdesigner</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>pgModeler</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>SQL Power Architect</li>
+</ul>
+</li>
+</ul>
+<h4 id="数据库操作">数据库操作<a hidden class="anchor" aria-hidden="true" href="#数据库操作">#</a></h4>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>范式</p>
+<ul>
+<li><a href="https://blog.csdn.net/Dream_angel_Z/article/details/45175621">(18条消息) 数据库（第一范式，第二范式，第三范式）_拾毅者的博客-CSDN博客_范式</a></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>存储过程</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/137896709">存储过程这一篇就够了 - 知乎</a></li>
+<li>降低业务系统与数据库的交互</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>SQL</li>
+</ul>
+<h4 id="数据模型-关系模型">数据模型（关系模型）<a hidden class="anchor" aria-hidden="true" href="#数据模型-关系模型">#</a></h4>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/138633959">关系模型详解【数据库概论】 - 知乎</a></li>
+<li>数据结构：关系
+<ul>
+<li>学生信息表（姓名，年龄，班级）
+<ul>
+<li>关系名，关系的度为3</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>关系模式：关系的描述
+<ul>
+<li>R：关系名</li>
+<li>U：属性集合：属性名的集合</li>
+<li>D：属性组U中属性的所有属性值的集合</li>
+<li>Dom：属性的类型和长度</li>
+<li>F：属性间数据的依赖关系集合：对应现实世界事物特征间的一种依赖关系</li>
+</ul>
+</li>
+<li>关系实例：一个给定关系在某一时刻的元组的集合，即当前关系的值</li>
+<li>数据操作：查询更新</li>
+<li>数据完整性：实体完整性，参照完整性，自定义完整性</li>
+<li>”关系”理解为一张带数据的表，而“关系模式”是这张数据表的表结构</li>
+<li>关系模型由关系数据结构,关系操作集合,<a href="https://owen027.github.io/2019/09/19/integrity_constraint_of_relational/">关系完整性约束</a>三部分组成</li>
+</ul>
+<h3 id="云计算">云计算<a hidden class="anchor" aria-hidden="true" href="#云计算">#</a></h3>
+<h4 id="hadoop">Hadoop<a hidden class="anchor" aria-hidden="true" href="#hadoop">#</a></h4>
+<h4 id="hive">Hive<a hidden class="anchor" aria-hidden="true" href="#hive">#</a></h4>
+<h4 id="hbase">Hbase<a hidden class="anchor" aria-hidden="true" href="#hbase">#</a></h4>
+<h4 id="hdfs">HDFS<a hidden class="anchor" aria-hidden="true" href="#hdfs">#</a></h4>
+
+
+  </div><aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">Table of Contents</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#%e6%95%b0%e6%8d%ae%e4%bb%b7%e5%80%bc%e7%9a%84%e5%88%9b%e9%80%a0%e8%bf%87%e7%a8%8b" aria-label="数据价值的创造过程">数据价值的创造过程</a></li>
+                    <li>
+                        <a href="#%e6%95%b0%e6%8d%ae" aria-label="数据">数据</a><ul>
+                            
+                    <li>
+                        <a href="#%e8%ae%b0%e5%bd%95%e7%b1%bb%e6%95%b0%e6%8d%ae" aria-label="记录类数据">记录类数据</a></li>
+                    <li>
+                        <a href="#%e5%85%83%e6%95%b0%e6%8d%ae-meta-data" aria-label="元数据 Meta Data">元数据 Meta Data</a><ul>
+                            
+                    <li>
+                        <a href="#%e4%be%8b%e5%ad%90" aria-label="例子">例子</a></li>
+                    <li>
+                        <a href="#%e5%8a%9f%e8%83%bd" aria-label="功能">功能</a></li>
+                    <li>
+                        <a href="#%e5%88%86%e7%b1%bb-%e6%8c%89%e7%94%a8%e9%80%94" aria-label="分类（按用途）">分类（按用途）</a></li>
+                    <li>
+                        <a href="#%e5%88%86%e7%b1%bb-%e6%8c%89%e9%a2%86%e5%9f%9f" aria-label="分类（按领域）">分类（按领域）</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e5%85%83%e6%a8%a1%e5%9e%8b" aria-label="元模型">元模型</a></li>
+                    <li>
+                        <a href="#%e5%8f%82%e8%80%83%e6%95%b0%e6%8d%ae-reference-data" aria-label="参考数据 Reference Data">参考数据 Reference Data</a></li>
+                    <li>
+                        <a href="#%e4%b8%bb%e6%95%b0%e6%8d%ae-master-data" aria-label="主数据 Master Data">主数据 Master Data</a></li>
+                    <li>
+                        <a href="#%e5%88%86%e6%9e%90%e7%b1%bb%e6%95%b0%e6%8d%ae" aria-label="分析类数据">分析类数据</a><ul>
+                            
+                    <li>
+                        <a href="#%e4%b8%9a%e5%8a%a1%e8%bf%87%e7%a8%8b" aria-label="业务过程">业务过程</a></li>
+                    <li>
+                        <a href="#%e5%ba%a6%e9%87%8f-%e6%95%b0%e5%80%bc" aria-label="度量（数值）">度量（数值）</a></li>
+                    <li>
+                        <a href="#%e7%bb%b4%e5%ba%a6-%e5%ae%9e%e4%bd%93" aria-label="维度（实体）">维度（实体）</a></li>
+                    <li>
+                        <a href="#%e6%8c%87%e6%a0%87-%e7%bb%b4%e5%ba%a6-and-%e8%bf%87%e7%a8%8b%e7%9a%84%e5%ba%a6%e9%87%8f" aria-label="指标（维度&amp;amp;过程的度量）">指标（维度&amp;过程的度量）</a></li>
+                    <li>
+                        <a href="#%e4%ba%8b%e5%ae%9e%e8%a1%a8" aria-label="事实表">事实表</a></li>
+                    <li>
+                        <a href="#%e7%bb%9f%e8%ae%a1%e7%b2%92%e5%ba%a6" aria-label="统计粒度">统计粒度</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e6%95%b0%e6%8d%ae%e9%97%b4%e7%9a%84%e5%85%b3%e7%b3%bb" aria-label="数据间的关系">数据间的关系</a><ul>
+                            
+                    <li>
+                        <a href="#%e5%85%83%e6%95%b0%e6%8d%ae-and-%e4%b8%bb%e6%95%b0%e6%8d%ae" aria-label="元数据&amp;amp;主数据">元数据&amp;主数据</a></li></ul>
+                    </li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e6%95%b0%e6%8d%ae%e7%ae%a1%e7%90%86" aria-label="数据管理">数据管理</a><ul>
+                            
+                    <li>
+                        <a href="#%e5%85%83%e6%95%b0%e6%8d%ae%e7%ae%a1%e7%90%86" aria-label="元数据管理">元数据管理</a><ul>
+                            
+                    <li>
+                        <a href="#%e5%85%83%e6%a8%a1%e5%9e%8b%e7%ae%a1%e7%90%86" aria-label="元模型管理">元模型管理</a></li>
+                    <li>
+                        <a href="#%e5%85%83%e6%95%b0%e6%8d%ae%e7%ae%a1%e7%90%86" aria-label="元数据管理">元数据管理</a></li>
+                    <li>
+                        <a href="#%e5%85%83%e6%95%b0%e6%8d%ae%e5%88%86%e6%9e%90" aria-label="元数据分析">元数据分析</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e4%b8%bb%e6%95%b0%e6%8d%ae%e7%ae%a1%e7%90%86mdm" aria-label="主数据管理MDM">主数据管理MDM</a></li>
+                    <li>
+                        <a href="#mdm%e7%b3%bb%e7%bb%9f" aria-label="MDM系统">MDM系统</a></li>
+                    <li>
+                        <a href="#%e6%95%b0%e6%8d%ae%e7%ae%a1%e7%90%86%e6%a1%86%e6%9e%b6" aria-label="数据管理框架">数据管理框架</a><ul>
+                            
+                    <li>
+                        <a href="#dcmm" aria-label="DCMM">DCMM</a></li>
+                    <li>
+                        <a href="#dama" aria-label="DAMA">DAMA</a></li>
+                    <li>
+                        <a href="#%e6%88%98%e7%95%a5%e4%b8%80%e8%87%b4%e6%80%a7%e6%a8%a1%e5%9e%8b" aria-label="战略一致性模型">战略一致性模型</a></li>
+                    <li>
+                        <a href="#dama-dmbok%e6%a1%86%e6%9e%b6" aria-label="DAMA-DMBOK框架">DAMA-DMBOK框架</a></li>
+                    <li>
+                        <a href="#434%e6%95%b0%e6%8d%ae%e7%ae%a1%e7%90%86%e6%a1%86%e6%9e%b6" aria-label="434数据管理框架">434数据管理框架</a></li></ul>
+                    </li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e6%95%b0%e6%8d%ae%e6%b2%bb%e7%90%86" aria-label="数据治理">数据治理</a><ul>
+                            
+                    <li>
+                        <a href="#%e5%ae%9a%e4%b9%89" aria-label="定义">定义</a></li>
+                    <li>
+                        <a href="#%e7%9b%ae%e6%a0%87" aria-label="目标">目标</a><ul>
+                            
+                    <li>
+                        <a href="#%e5%85%b7%e4%bd%93%e5%81%9a%e6%b3%95" aria-label="具体做法">具体做法</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e6%ad%a5%e9%aa%a4" aria-label="步骤">步骤</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e4%b8%9a%e5%8a%a1" aria-label="业务">业务</a><ul>
+                            
+                    <li>
+                        <a href="#%e5%b2%97%e4%bd%8d%e8%ae%a4%e7%9f%a5" aria-label="岗位认知">岗位认知</a><ul>
+                            
+                    <li>
+                        <a href="#%e5%85%b6%e4%bb%96%e5%85%ac%e5%8f%b8%e5%b7%a5%e4%bd%9c%e8%a6%81%e6%b1%82" aria-label="其他公司工作要求">其他公司工作要求</a></li>
+                    <li>
+                        <a href="#%e6%94%bf%e5%8a%a1%e5%a4%a7%e6%95%b0%e6%8d%ae%e4%b8%ad%e5%bf%83%e8%b5%84%e6%ba%90%e6%b1%a0%e5%bb%ba%e8%ae%be" aria-label="政务大数据中心资源池建设">政务大数据中心资源池建设</a></li>
+                    <li>
+                        <a href="#%e5%b2%97%e4%bd%8d%e5%b7%a5%e4%bd%9c%e5%86%85%e5%ae%b9" aria-label="岗位工作内容">岗位工作内容</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e5%b7%a5%e4%bd%9c%e5%86%85%e5%ae%b9" aria-label="工作内容">工作内容</a><ul>
+                            
+                    <li>
+                        <a href="#%e6%94%bf%e5%8a%a1%e5%a4%a7%e6%95%b0%e6%8d%ae%e4%b8%ad%e5%bf%83%e8%b5%84%e6%ba%90%e6%b1%a0%e5%bb%ba%e8%ae%be" aria-label="政务大数据中心资源池建设">政务大数据中心资源池建设</a></li>
+                    <li>
+                        <a href="#%e8%b4%a8%e9%87%8f%e7%ae%a1%e7%90%86" aria-label="质量管理">质量管理</a></li>
+                    <li>
+                        <a href="#%e6%95%b0%e6%8d%ae%e4%ba%a4%e6%8d%a2%e8%bf%87%e7%a8%8b%e8%ae%be%e8%ae%a1%e4%b8%8e%e5%ae%9e%e6%96%bd" aria-label="数据交换过程设计与实施">数据交换过程设计与实施</a></li>
+                    <li>
+                        <a href="#%e6%95%b0%e6%8d%ae%e6%b2%bb%e7%90%86%e6%96%b9%e6%a1%88%e5%88%b6%e5%ae%9a" aria-label="数据治理方案制定">数据治理方案制定</a></li></ul>
+                    </li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e6%8a%80%e6%9c%af" aria-label="技术">技术</a><ul>
+                            
+                    <li>
+                        <a href="#%e6%95%b0%e6%8d%ae%e4%bb%93%e5%ba%93" aria-label="数据仓库">数据仓库</a><ul>
+                            
+                    <li>
+                        <a href="#%e5%ae%9a%e4%b9%89%e4%b8%8e%e7%89%b9%e7%82%b9" aria-label="定义与特点">定义与特点</a></li>
+                    <li>
+                        <a href="#%e5%9f%ba%e6%9c%ac%e6%9e%b6%e6%9e%84" aria-label="基本架构">基本架构</a></li>
+                    <li>
+                        <a href="#%e6%95%b0%e6%8d%ae%e5%88%86%e5%b1%82" aria-label="数据分层">数据分层</a></li>
+                    <li>
+                        <a href="#%e5%bb%ba%e6%a8%a1%e6%96%b9%e5%bc%8f" aria-label="建模方式">建模方式</a></li>
+                    <li>
+                        <a href="#oltp%e4%b8%8eolap%e5%af%b9%e6%af%94" aria-label="OLTP与OLAP对比">OLTP与OLAP对比</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e6%95%b0%e6%8d%ae%e5%ba%93" aria-label="数据库">数据库</a><ul>
+                            
+                    <li>
+                        <a href="#%e8%8c%83%e5%bc%8f" aria-label="范式">范式</a></li>
+                    <li>
+                        <a href="#%e6%95%b0%e6%8d%ae%e5%ba%93%e5%bb%ba%e6%a8%a1" aria-label="数据库建模">数据库建模</a></li>
+                    <li>
+                        <a href="#%e6%95%b0%e6%8d%ae%e5%ba%93%e6%93%8d%e4%bd%9c" aria-label="数据库操作">数据库操作</a></li>
+                    <li>
+                        <a href="#%e6%95%b0%e6%8d%ae%e6%a8%a1%e5%9e%8b-%e5%85%b3%e7%b3%bb%e6%a8%a1%e5%9e%8b" aria-label="数据模型（关系模型）">数据模型（关系模型）</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e4%ba%91%e8%ae%a1%e7%ae%97" aria-label="云计算">云计算</a><ul>
+                            
+                    <li>
+                        <a href="#hadoop" aria-label="Hadoop">Hadoop</a></li>
+                    <li>
+                        <a href="#hive" aria-label="Hive">Hive</a></li>
+                    <li>
+                        <a href="#hbase" aria-label="Hbase">Hbase</a></li>
+                    <li>
+                        <a href="#hdfs" aria-label="HDFS">HDFS</a>
+                    </li>
+                </ul>
+                </li>
+                </ul>
+                </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="http://izrchen.github.io/">Nathan’s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
